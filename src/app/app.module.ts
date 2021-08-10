@@ -7,13 +7,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
+import { SliderHomeComponent } from './components/home/slider-home/slider-home.component';
+import { ProductCardComponent } from './components/partials/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SliderHomeComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
