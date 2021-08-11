@@ -1,8 +1,8 @@
-<!-- Home container -- Début -->
+<!-- Home  -- Début -->
 <div>
 
-  <!-- Home -->
-    <div>
+  <!-- Home container -->
+    <div class="container" fxLayoutGap="40px" fxLayout="column">
       <!-- Slider Home -- Début  -->
       <div>
         <app-slider-home></app-slider-home>
@@ -16,8 +16,18 @@
       <!-- Hello que cherchez-vous ? -- Fin -->
 
       <!-- Notre sélection du moment -- Début -->
-        <div>
-          <app-product-card></app-product-card>
+        <div fxLayout="column" >
+          <div>
+            <h3 id="title">NOTRE SÉLECTION DU MOMENT...</h3>
+          </div>
+          <div class="textImg" fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px">
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="50">
+            <h2 id="voir-tous-les-prod">VOIR TOUS LES PRODUITS</h2>
+          </div>
         </div>
       <!-- Notre sélection du moment -- Fin -->
 
@@ -34,7 +44,7 @@
       <!-- Offres exclusives -- Fin -->
 
     </div>
-  <!-- Home - Fin -->
+  <!-- Home container -- Fin -->
 
 </div>
-<!-- Home container -- Fin -->
+<!-- Home  -- Fin -->
