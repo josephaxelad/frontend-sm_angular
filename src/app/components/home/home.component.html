@@ -18,15 +18,23 @@
       <!-- Notre sélection du moment -- Début -->
         <div fxLayout="column" >
           <div>
-            <h3 id="title">NOTRE SÉLECTION DU MOMENT...</h3>
+            <h1 id="title">NOTRE SÉLECTION DU MOMENT...</h1>
           </div>
-          <div class="textImg" fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px">
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
+
+          <!-- fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px" -->
+          <div id="carousel-featured-product">
+            <a href="javascript:void(0)" class="btn-prev" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/left-arrow-white.png" alt=""></a>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <a href="javascript:void(0)"  class="btn-next" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/right-arrow-white.png" alt=""></a>
           </div>
-          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="50">
-            <h2 id="voir-tous-les-prod">VOIR TOUS LES PRODUITS</h2>
+          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+            <a href="javascript:void(0)" id="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
           </div>
         </div>
       <!-- Notre sélection du moment -- Fin -->

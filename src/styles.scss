@@ -3,3 +3,31 @@
 #main{
   margin-top: 140px;
 }
+
+/* Carousel */
+
+.carousel{
+  position: relative;
+  overflow: hidden;
+}
+
+ // appliquer un clearfix pour que carousel container garde sa hauteur
+ .carousel--container::after{
+  content: '';
+  clear: both;
+  display: table;
+  }
+
+  .carousel--container{
+    transition: transform 0.3s;
+    transform : translate3d(0,0,0);
+  }
+
+.carousel--item{
+  float: left;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  padding: 0 25px;
+  // margin: 0 15px;
+}

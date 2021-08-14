@@ -1,6 +1,6 @@
 #title{
-  color: #D89065;
-  font-size: 35px;
+  color: #D89065 ;
+  // font-size: 45px;
   padding-bottom: 11px;
 }
 
@@ -9,4 +9,33 @@
   padding: 7px 15px;
   border: 3px solid #693D2A;
   border-radius: 13px;
+  font-weight: lighter;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#carousel-featured-product{
+  position: relative;
+  a{
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top:  calc( 50% - 50px ) ;
+    background-color: rgba(221, 190, 171, 0.726);
+    z-index: 1;
+    box-shadow: 1px 0px 7px 1px #d3d3d3;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  a:hover{
+    transform: scale(1.2);
+  }
+  .btn-prev{
+    left: -15px;
+  }
+  .btn-next{
+    right: -15px;
+  }
 }

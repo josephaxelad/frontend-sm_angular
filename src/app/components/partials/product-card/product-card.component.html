@@ -1,16 +1,16 @@
-<div fxLayout="column" class="product-card" >
+<div  fxLayout="column" class="product-card" >
   <div class="nouveau" fxLayout="row"><span>Nouveau</span></div>
-  <div>
-    <img class="img-product" fxFill src="assets/images/sm-footer-1.jpg" alt="">
+  <div  fxLayout="row" >
+    <img class="img-product" fxFlex src="assets/images/sm-footer-1.jpg" alt="">
   </div>
-  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+  <div  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
     <div fxLayout="row"><i *ngFor="let item of [1,2,3,4,5]" class="etoile">&#9733;</i>(6)</div>
     <div fxLayout="column" fxLayoutAlign="center center" class="category-name">
-      <div class="categorie">SOIN DU CORPS</div>
-      <div class="nameProduct"><b>GAMME NÉFERTITI</b></div>
+      <a href="javascript:void(0)" class="categorie">SOIN DU CORPS</a>
+      <a href="javascript:void(0)" class="nameProduct"><b>GAMME NÉFERTITI </b></a>
     </div>
     <div><h5 class="product-price"><b>100 €</b></h5></div>
   </div>
-  <button class="btn-acheter"><span>Acheter</span></button>
+  <a *ngIf="btnAcheter" class="btn btn-acheter" href="javascript:void(0)" ><span>ACHETER</span></a>
   <!--<a class="btn-acheter" href="javascript:void(0)"><span>Acheter</span></a> #}-->
 </div>
