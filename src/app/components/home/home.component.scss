@@ -1,8 +1,9 @@
-#title{
+.title{
   color: #D89065 ;
   // font-size: 45px;
   padding-bottom: 11px;
 }
+
 
 #voir-tous-les-prod{
   color: #693D2A;
@@ -39,3 +40,116 @@
     right: -15px;
   }
 }
+
+.conseil-card{
+  border-radius: 15px;
+  height: 650px;
+  margin-bottom: 70px;
+
+
+  .img-conseil{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .category-name{
+    .name1{
+      color: #693D2A;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 20px;
+    }
+
+    .name2{
+      color: #D9935B ;
+      font-size: 17px;
+      padding-left: 20px;
+    }
+
+    .en-savoir-plus{
+      text-decoration: none;
+      color: #693D2A;
+      font-size: xx-small;
+      padding-left: 20px;
+    }
+  }
+
+
+}
+
+.conseil-card2{
+  border-radius: 15px;
+  height: 513px;
+  margin-bottom: 70px;
+
+
+  .img-conseil{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  .category-name{
+    .name1{
+      color: #693D2A;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 20px;
+    }
+
+    .name2{
+      color: #D9935B ;
+      font-size: 17px;
+      padding-left: 20px;
+    }
+
+    .en-savoir-plus{
+      text-decoration: none;
+      color: #693D2A;
+      font-size: xx-small;
+      padding-left: 20px;
+    }
+  }
+
+
+}
+
+
+.conseil-card:hover{
+  box-shadow: 2px 5px 13px 0px #989898;
+}
+
+.conseil-card2:hover{
+  box-shadow: 2px 5px 13px 0px #989898;
+}
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////
+#titleHello{
+  color: #D9935B ;
+  font-size: 54px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#titleConseil{
+  color: #D9935B ;
+  // font-size: 45px;
+  padding-bottom: 11px;
+  padding-top: 120px;
+}
+
+
+.boutique-conseil{
+  padding-top: 10px;
+  color: #693D2A;
+  text-align: center;
+}
+
