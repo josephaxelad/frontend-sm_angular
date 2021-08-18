@@ -7,8 +7,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
-import { SliderHomeComponent } from './components/home/slider-home/slider-home.component';
 import { ProductCardComponent } from './components/partials/product-card/product-card.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { SliderComponent } from './components/partials/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { ProductCardComponent } from './components/partials/product-card/product
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SliderHomeComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ShopComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
