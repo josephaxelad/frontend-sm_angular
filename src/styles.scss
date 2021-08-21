@@ -6,16 +6,16 @@
 
 /* Carousel */
 
-.carousel{
-  position: relative;
-  overflow: hidden;
-}
+  .carousel{
+    position: relative;
+    overflow: hidden;
+  }
 
- // appliquer un clearfix pour que carousel container garde sa hauteur
- .carousel--container::after{
-  content: '';
-  clear: both;
-  display: table;
+  // appliquer un clearfix pour que carousel container garde sa hauteur
+  .carousel--container::after{
+    content: '';
+    clear: both;
+    display: table;
   }
 
   .carousel--container{
@@ -23,11 +23,31 @@
     transform : translate3d(0,0,0);
   }
 
-.carousel--item{
-  float: left;
-  display: flex;
-  align-items: center;
-  place-content: center;
-  padding: 0 25px;
-  // margin: 0 15px;
+  .carousel--item{
+    float: left;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    padding: 0 25px;
+    // margin: 0 15px;
+  }
+
+/* Carousel */
+
+
+/* Diapo */
+
+.carousel-home-indicators--item{
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
+
+.carousel-home-indicators--item.active{
+  background-color: white;
+}
+
+
+/* Diapo */
