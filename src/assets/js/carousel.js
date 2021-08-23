@@ -15,6 +15,7 @@ class Carousel {
     }, options)
 
     this.isMobile = true
+    this.isTablet = true
     this.currentItem = 0
 
     let children_ = [].slice.call(element.children)
@@ -46,6 +47,12 @@ class Carousel {
     let mobile = window.innerWidth < 600
     if (mobile !== this.isMobile) {
       this.isMobile = mobile
+      this.setStyle()
+    }
+
+    let tablet = window.innerWidth < 1000
+    if (tablet !== this.isTablet) {
+      this.isTablet = tablet
       this.setStyle()
     }
   }
@@ -118,11 +125,11 @@ class Carousel {
   }
 
   get slidesToScroll(){
-    return this.isMobile ? 1 : this.options.slidesToScroll
+    return this.isMobile ? 1 : ( this.isTablet ? 2 :this.options.slidesToScroll)
   }
 
   get slidesVisible(){
-    return this.isMobile ? 1 : this.options.slidesVisible
+    return this.isMobile ? 1 : ( this.isTablet ? 2 :this.options.slidesVisible)
   }
 }
 
