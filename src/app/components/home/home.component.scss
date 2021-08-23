@@ -43,84 +43,85 @@
 
 .conseil-card{
   border-radius: 15px;
-  height: 650px;
-  margin-bottom: 70px;
+  margin-bottom: 15px;
+
+  box-shadow: 2px 5px 13px 0px #989898;
 
 
   .img-conseil{
+    @media (max-width: 600px) {
+      height: 300px;
+    }
     border-radius: 15px 15px 0px 0px;
+    height: 500px;
   }
 
-  .category-name{
-    .name1{
-      color: #693D2A;
-      font-size: 15px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding-left: 20px;
-    }
-
-    .name2{
-      color: #D9935B ;
-      font-size: 17px;
-      padding-left: 20px;
-    }
-
-    .en-savoir-plus{
-      text-decoration: none;
-      color: #693D2A;
-      font-size: xx-small;
-      padding-left: 20px;
-    }
-  }
 
 
 }
 
-.conseil-card2{
+.actu-card{
   border-radius: 15px;
-  height: 513px;
-  margin-bottom: 70px;
+  margin-bottom: 15px;
 
+  box-shadow: 2px 5px 13px 0px #989898;
 
   .img-conseil{
     border-radius: 15px 15px 0px 0px;
   }
 
-  .category-name{
-    .name1{
-      color: #693D2A;
-      font-size: 15px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding-left: 20px;
-    }
 
-    .name2{
-      color: #D9935B ;
-      font-size: 17px;
-      padding-left: 20px;
-    }
+}
 
-    .en-savoir-plus{
-      text-decoration: none;
-      color: #693D2A;
-      font-size: xx-small;
-      padding-left: 20px;
-    }
+.category-name{
+  .name1{
+    color: #693D2A;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+    padding: 0 20px;
+    padding-bottom: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
 
+  .name2{
+    color: #D9935B ;
+    font-size: 17px;
+    padding-bottom: 10px;
+    margin: 0;
+    padding: 0 20px;
+    padding-bottom: 5px;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .en-savoir-plus{
+    text-decoration: none;
+    color: #693D2A;
+    font-size: xx-small;
+    padding: 0 20px;
+    padding-bottom: 10px;
+  }
+
+  .en-savoir-plus:hover{
+    transform: translate(10px);
+  }
 }
 
+// .conseil-card:hover{
 
-.conseil-card:hover{
-  box-shadow: 2px 5px 13px 0px #989898;
-}
+// }
 
-.conseil-card2:hover{
-  box-shadow: 2px 5px 13px 0px #989898;
-}
+// .actu-card:hover{
+//   box-shadow: 2px 5px 13px 0px #989898;
+// }
 
 
 
@@ -132,24 +133,16 @@
 
 
 //////////////////////////////////////////
-#titleHello{
-  color: #D9935B ;
-  font-size: 54px;
-  padding-bottom: 60px;
-  text-align: center;
-}
-
-#titleConseil{
-  color: #D9935B ;
-  // font-size: 45px;
-  padding-bottom: 11px;
-  padding-top: 120px;
-}
-
 
 .boutique-conseil{
-  padding-top: 10px;
-  color: #693D2A;
-  text-align: center;
+
+  text-decoration: none;
+
+  b{
+    padding-top: 10px;
+    color: #693D2A;
+    text-align: center;
+  }
 }
+
 
