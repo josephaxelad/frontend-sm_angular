@@ -1,0 +1,86 @@
+
+.product-card{
+  border-radius: 15px;
+  position: relative;
+  height: 450px;
+  max-width: 400px;
+  margin-bottom: 50px;
+
+
+  .img-product{
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    min-height: 325px;
+    max-height: 325px;
+
+  }
+}
+
+.product-card:hover{
+  box-shadow: 2px 5px 13px 0px #989898;
+}
+.category-name{
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.categorie{
+  color: #693D2A;
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+.nameProduct{
+  color: #D89065;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+.etoile{
+  font-size: 1rem;
+  color: #693D2A;
+}
+
+.product-price{
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.nouveau{
+  position: absolute;
+  top: 15%;
+  left: -2px;
+  right: 73%;
+  color: white;
+  padding-left: 4px;
+  background-color: #D89065;
+  border-radius: 0 7px 7px 0;
+  font-weight: bold;
+}
+.btn-acheter{
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  background-color: #693D2A;
+  color: white;
+  text-decoration: none;
+  padding: 5px 50px;
+  border-radius: 40px;
+  font-weight: bold;
+
+}
+
+.btn-acheter:hover{
+  text-decoration: none;
+}

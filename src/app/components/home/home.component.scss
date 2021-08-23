@@ -1,0 +1,147 @@
+.title{
+  color: #D89065 ;
+  padding-bottom: 11px;
+}
+
+
+#voir-tous-les-prod{
+  color: #693D2A;
+  padding: 7px 15px;
+  border: 3px solid #693D2A;
+  border-radius: 13px;
+  font-weight: lighter;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#carousel-featured-product{
+  position: relative;
+  a{
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top:  calc( 50% - 50px ) ;
+    background-color: rgba(221, 190, 171, 0.726);
+    z-index: 1;
+    box-shadow: 1px 0px 7px 1px #d3d3d3;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  a:hover{
+    transform: scale(1.2);
+  }
+  .btn-prev{
+    left: -15px;
+  }
+  .btn-next{
+    right: -15px;
+  }
+}
+
+.conseil-card{
+  border-radius: 15px;
+  margin-bottom: 15px;
+
+  box-shadow: 2px 5px 13px 0px #989898;
+
+
+  .img-conseil{
+    @media (max-width: 600px) {
+      height: 300px;
+    }
+    border-radius: 15px 15px 0px 0px;
+    height: 500px;
+  }
+
+
+
+}
+
+.actu-card{
+  border-radius: 15px;
+  margin-bottom: 15px;
+
+  box-shadow: 2px 5px 13px 0px #989898;
+
+  .img-conseil{
+    border-radius: 15px 15px 0px 0px;
+  }
+
+
+}
+
+.category-name{
+  .name1{
+    color: #693D2A;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+    padding: 0 20px;
+    padding-bottom: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  .name2{
+    color: #D9935B ;
+    font-size: 17px;
+    padding-bottom: 10px;
+    margin: 0;
+    padding: 0 20px;
+    padding-bottom: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .en-savoir-plus{
+    text-decoration: none;
+    color: #693D2A;
+    font-size: xx-small;
+    padding: 0 20px;
+    padding-bottom: 10px;
+  }
+
+  .en-savoir-plus:hover{
+    transform: translate(10px);
+  }
+}
+
+// .conseil-card:hover{
+
+// }
+
+// .actu-card:hover{
+//   box-shadow: 2px 5px 13px 0px #989898;
+// }
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////
+
+.boutique-conseil{
+
+  text-decoration: none;
+
+  b{
+    padding-top: 10px;
+    color: #693D2A;
+    text-align: center;
+  }
+}
+
+

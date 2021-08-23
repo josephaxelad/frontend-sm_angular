@@ -1,30 +1,132 @@
-<!-- Home container -- Début -->
+<!-- Home  -- Début -->
 <div>
 
-  <!-- Home -->
-    <div>
+  <!-- Home container -->
+    <div class="container" fxLayoutGap="60px" fxLayout="column">
       <!-- Slider Home -- Début  -->
       <div>
-
+        <app-slider-home></app-slider-home>
       </div>
       <!-- Slider Home -- Fin -->
 
       <!-- Hello que cherchez-vous ? -- Début -->
-        <div>
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h1 class="title">Hello, que cherchez-vous ? </h1>
+          </div>
 
+          <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" fxLayoutGap="10%" fxLayoutGap.xs="15%" >
+
+            <a class="boutique-conseil" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30"  fxLayout="column" fxLayoutAlign="center center">
+              <img height="125"  src="assets/images/Fichier 3@2x.png" alt="">
+              <div ><b><img height="8" src="assets/images/icones/right-arrow.png" alt=""> Boutique</b></div>
+            </a>
+
+            <a class="boutique-conseil" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30" fxLayout="column" fxLayoutAlign="center center">
+              <img height="125" src="assets/images/Fichier 2@2x.png" alt="">
+              <div ><b><img height="8" src="assets/images/icones/right-arrow.png" alt=""> Conseils</b></div>
+            </a>
+
+          </div>
         </div>
       <!-- Hello que cherchez-vous ? -- Fin -->
 
       <!-- Notre sélection du moment -- Début -->
-        <div>
-          <app-product-card></app-product-card>
+        <div fxLayout="column" >
+          <div>
+            <h1 class="title">NOTRE SÉLECTION DU MOMENT...</h1>
+          </div>
+
+          <!-- fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px" -->
+          <div id="carousel-featured-product">
+            <a href="javascript:void(0)" class="btn-prev" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/left-arrow-white.png" alt=""></a>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <app-product-card ></app-product-card>
+            <a href="javascript:void(0)"  class="btn-next" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/right-arrow-white.png" alt=""></a>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+            <a href="javascript:void(0)" id="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+          </div>
         </div>
       <!-- Notre sélection du moment -- Fin -->
 
       <!-- Conseils et Actualités -- Début -->
-        <div>
 
-        </div>
+          <div fxLayout="column" >
+            <div>
+              <h1 class="title">CONSEILS ET ACTUALITÉS</h1>
+            </div>
+
+            <!-- conseils -- Début -->
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" >
+
+              <div fxFlex.gt-sm="47" fxFlex="100" fxLayout="column" class="conseil-card">
+                <img class="img-conseil"  src="assets/images/apSpcOAhF8.jpg" alt="">
+                <div  fxLayout="column">
+                  <div fxLayout="column" class="category-name">
+                    <div class="name1"><b>VISAGE</b></div>
+                    <p class="name2"><b>LES MEILLEURS CONSEILS POUR UNE BELLE PEAU... </b></p>
+                    <a href="javascript:void(0)" class="en-savoir-plus"><b><img height="6" src="assets/images/icones/right-arrow.png" alt="">EN SAVOIR PLUS</b></a>
+                  </div>
+                </div>
+              </div>
+
+              <div fxFlex.gt-sm="47" fxFlex="100" fxLayout="column" class="conseil-card">
+                  <img class="img-conseil"  src="assets/images/quaxocjQqn.jpg" alt="">
+                  <div  fxLayout="column" >
+                    <div fxLayout="column" class="category-name">
+                      <div class="name1"><b>SANTÉ FÉMININE</b></div>
+                      <p class="name2"><b>SOULAGER LES DOULEURS PRÉ-MENSTRUELLES... </b></p>
+                      <a href="javascript:void(0)" class="en-savoir-plus"><b><img height="6" src="assets/images/icones/right-arrow.png" alt="">EN SAVOIR PLUS</b></a>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+            <!-- conseils -- Fin -->
+
+            <!-- actualités -- Début -->
+            <div fxLayout="row wrap"   fxLayoutAlign="space-between center" >
+
+              <div fxFlex="30" fxFlex.sm="47" fxFlex.xs="100" class="actu-card"  fxLayout="column">
+                <img fxFlex="100" class="img-conseil" height="300"  src="assets/images/apSpcOAhF8.jpg" alt="">
+                <div fxLayout="column" class="category-name">
+                  <div class="name1"><b>NOTRE HISTOIRE</b></div>
+                  <p class="name2">L’origine et l’histoire de la marque Secret de Mafa.</p>
+                  <a href="javascript:void(0)" class="en-savoir-plus"><b><img height="6" src="assets/images/icones/right-arrow.png" alt="">EN SAVOIR PLUS</b></a>
+                </div>
+              </div>
+
+              <div fxFlex="30" fxFlex.sm="47" fxFlex.xs="100" fxLayout="column"  class="actu-card">
+                <img class="img-conseil" height="300" src="assets/images/HFmzHoyl0Q.jpg" alt="">
+                <div fxLayout="column"  class="category-name">
+                  <div class="name1"><b>NOS VALEURS</b></div>
+                  <p class="name2">Les valeurs fondatrices de notre identité, notre
+                  savoir-faire et notre savoire-être. </p>
+                  <a href="javascript:void(0)" class="en-savoir-plus"><b><img height="6" src="assets/images/icones/right-arrow.png" alt="">EN SAVOIR PLUS</b></a>
+                </div>
+              </div>
+
+              <div fxFlex="30" fxFlex.sm="47" fxFlex.xs="100" fxLayout="column"  class="actu-card">
+                <img class="img-conseil" height="300" src="assets/images/quaxocjQqn.jpg" alt="">
+                <div fxLayout="column" class="category-name">
+                  <div class="name1"><b>NOTRE SAVOIR-FAIRE</b></div>
+                  <p class="name2">Le savoir-faire pharmaceutique de Secret de Mafa,
+                    une cosmétique naturelle et bio.</p>
+                  <a href="javascript:void(0)" class="en-savoir-plus"><b><img height="6" src="assets/images/icones/right-arrow.png" alt="">EN SAVOIR PLUS</b></a>
+                </div>
+              </div>
+
+            </div>
+            <!-- actualités -- Fin -->
+
+          </div>
+
       <!-- Conseils et Actualités -- Fin -->
 
       <!-- Offres exlusives -- Début -->
@@ -34,7 +136,7 @@
       <!-- Offres exclusives -- Fin -->
 
     </div>
-  <!-- Home - Fin -->
+  <!-- Home container -- Fin -->
 
 </div>
-<!-- Home container -- Fin -->
+<!-- Home  -- Fin -->

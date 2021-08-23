@@ -1,0 +1,36 @@
+<!-- slider-home -- Debut -->
+<div>
+  <!-- slider-container -- Début-->
+  <div  id="carousel-home"  (mouseover)="stopTimer()" (mouseout)="startTimer()">
+
+    <!-- slider items -- Début -->
+    <div id="carousel-home-items">
+      <div fxFill style="background-image: url('assets/images/img1.jpg');"></div>
+      <div fxFill style="background-image: url('assets/images/img2.jpg');"></div>
+      <div fxFill style="background-image: url('assets/images/img3.jpg');"></div>
+      <div fxFill style="background-image: url('assets/images/img4.jpg');"></div>
+    </div>
+    <!-- slider items -- Fin -->
+
+    <!-- Logo -- Début -->
+    <div id="carousel-home-logo" fxLayout="row" fxLayoutAlign="center center" >
+      <img fxFlex="40" src="assets/images/icones/logo_blanc.png" alt="">
+    </div>
+    <!-- Logo -- Fin -->
+
+    <!-- Indicateurs -- Début -->
+    <div id="carousel-home-indicators" fxHide.lt-lg fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+
+    </div>
+    <!-- Indicateurs -- Fin -->
+
+    <!-- Légende -- Début -->
+    <div id="carousel-home-legend"  fxLayout="row" fxLayoutAlign="center center">
+      <h6> COSMETIQUE - BIEN-ETRE - SANTE INTIME</h6>
+    </div>
+    <!-- Légende -- Fin -->
+
+  </div>
+  <!-- slider-container -- Fin -->
+</div>
+<!-- slider-home -- Fin -->
