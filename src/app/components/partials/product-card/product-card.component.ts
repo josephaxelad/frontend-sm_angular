@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
 
   @Input() btnAcheter : boolean = true;
+  @Input() badgeNew : boolean = false;
 
   constructor() { }
 

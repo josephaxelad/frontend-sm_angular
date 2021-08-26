@@ -1,5 +1,5 @@
 <div  fxLayout="column" class="product-card" >
-  <div class="nouveau" fxLayout="row"><span>Nouveau</span></div>
+  <div *ngIf="badgeNew" class="nouveau" fxLayout="row"><span>Nouveau</span></div>
   <div  fxLayout="row" >
     <img class="img-product" fxFlex src="assets/images/sm-footer-1.jpg" alt="">
   </div>

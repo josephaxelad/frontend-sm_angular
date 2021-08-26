@@ -2,57 +2,56 @@
 <div>
 
   <!-- Shop Container -- Début -->
-    <div>
+    <div class="container" fxLayout="column" fxLayoutGap="60px" >
 
       <!-- Slider  -- Début  -->
       <div>
-
+        <app-slider title="NOS PRODUITS" backgroundImageLink="assets/images/img3.jpg"></app-slider>
       </div>
       <!-- Slider  -- Fin -->
 
       <!-- Filtre -- Début -->
-      <br><br><br><br>
-      <div fxLayout="row" fxLayoutAlign="center center" >
-        <div fxLayoutGap="40px">
-          <a class="btn btn-filtre" href="javascript:void(0)" ><span>TOUS</span></a>
-          <a class="btn btn-filtre2" href="javascript:void(0)" ><span>SOIN DE VISAGE</span></a>
-          <a class="btn btn-filtre2" href="javascript:void(0)" ><span>SOIN DU CORPS</span></a>
-          <a class="btn btn-filtre2" href="javascript:void(0)" ><span>SANTE FEMININE</span></a>
-          <a class="btn btn-homme" href="javascript:void(0)" ><span>HOMME</span></a>
-        </div>
+      <div id="filtre-produits" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px"  >
+          <a fxLayout="row"  class="btn btn-filtre active" href="javascript:void(0)" ><span >TOUS</span></a>
+          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SOIN DE VISAGE</span></a>
+          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SOIN DU CORPS</span></a>
+          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SANTE FEMININE</span></a>
+          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >HOMME</span></a>
       </div>
       <!-- Filtre -- Fin -->
 
       <!-- Produits -- Début -->
-        <div>
-
+        <div fxLayout="column">
+          <div fxLayout="row wrap"  fxLayoutGap="3%" fxLayoutGap.xs="0%">
+            <app-product-card fxFlex.xs="100" fxFlex.sm="47" fxFlex="30" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11]" ></app-product-card>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+          </div>
         </div>
       <!-- Produits -- Fin -->
 
       <!-- Accès rapide -- Début -->
-      <br><br><br><br>
-      <div id="container-acces" >
+        <div fxLayout="column" class="container">
 
-          <div fxLayout="column" class="container">
-
-            <div fxLayout="row" >
-              <h4 id="title">ACCÈS RAPIDES</h4>
-            </div>
-            <div fxLayout="column" fxLayoutAlign="space-evenly start" fxLayoutGap="15px">
-              <a class="btn btn-access1" href="javascript:void(0)" ><span>> SOIN DE VISAGE</span></a>
-              <a class="btn btn-access1" href="javascript:void(0)" ><span>> SOIN DU CORPS</span></a>
-
-            </div>
-            <div fxLayout="row" fxLayoutAlign="space-evenly start" >
-              <div fxLayout="column" fxLayoutGap="15px">
-                <a class="btn btn-access2" href="javascript:void(0)" ><span>> SANTE FEMININE</span></a>
-                <a class="btn btn-access2" href="javascript:void(0)" ><span>> HOMME</span></a>
-              </div>
-            </div>
+          <div fxLayout="row" >
+            <h1 class="title">ACCÈS RAPIDES</h1>
           </div>
 
+          <div fxLayout="column" fxLayoutGap="10px" >
+            <div fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" fxLayoutGap.xs="0%">
+              <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100" class="btn btn-access" href="javascript:void(0)" ><span>> SOIN DE VISAGE</span></a>
+              <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100" class="btn btn-access" href="javascript:void(0)" ><span>> SOIN DU CORPS</span></a>
+            </div>
+            <div fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" fxLayoutGap.xs="0%">
+              <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100" class="btn btn-access" href="javascript:void(0)" ><span>> SANTE FEMININE</span></a>
+              <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100" class="btn btn-access" href="javascript:void(0)" ><span>> HOMME</span></a>
+            </div>
+          </div>
+        </div>
 
-      </div>
+
+
       <!-- Accès rapide -- Fin -->
 
     </div>
