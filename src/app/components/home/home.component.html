@@ -40,7 +40,7 @@
           <!-- fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px" -->
           <div id="carousel-featured-product">
             <a href="javascript:void(0)" class="btn-prev" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/left-arrow-white.png" alt=""></a>
-            <app-product-card ></app-product-card>
+            <app-product-card [badgeNew]="true" ></app-product-card>
             <app-product-card ></app-product-card>
             <app-product-card ></app-product-card>
             <app-product-card ></app-product-card>
@@ -50,7 +50,7 @@
             <a href="javascript:void(0)"  class="btn-next" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/right-arrow-white.png" alt=""></a>
           </div>
           <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
-            <a href="javascript:void(0)" id="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
           </div>
         </div>
       <!-- Notre sélection du moment -- Fin -->

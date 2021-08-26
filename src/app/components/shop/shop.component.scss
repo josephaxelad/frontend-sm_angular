@@ -1,0 +1,59 @@
+#filtre-produits{
+  position: sticky;
+  top: 75px;
+  z-index: 1;
+}
+.btn-filtre{
+  color: #693D2A;
+  padding: 5px 5px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 27px;
+  border: 3px solid #693D2A;
+  white-space: nowrap;
+  background-color: white;
+  margin-bottom: 3px;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+.btn-filtre:hover{
+  background-color: #693D2A;
+  color: white;
+}
+
+.btn-filtre.active{
+  background-color: #693D2A;
+  color: white;
+}
+
+.btn-access{
+  background-color: #D89065;
+  color: white;
+  // padding: 15px 100px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 31px;
+  margin-bottom: 3px;
+}
+
+.btn-acheter:hover{
+  text-decoration: none;
+}
+
+
+.title{
+  color: #D89065 ;
+  padding-bottom: 11px;
+}
+
+.voir-tous-les-prod{
+  color: #693D2A;
+  padding: 7px 15px;
+  border: 3px solid #693D2A;
+  border-radius: 13px;
+  font-weight: lighter;
+  font-size: larger;
+  text-decoration: none;
+}
