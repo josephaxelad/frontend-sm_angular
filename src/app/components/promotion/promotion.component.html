@@ -1,0 +1,38 @@
+<!-- Promotion -- Début -->
+<div>
+
+  <!-- Promotion Container -- Début -->
+    <div class="container" fxLayout="column" fxLayoutGap="60px" >
+
+      <!-- Slider  -- Début  -->
+      <div>
+        <app-slider title="PROMOTION" backgroundImageLink="assets/images/img4.jpg"></app-slider>
+      </div>
+      <!-- Slider  -- Fin -->
+
+      <!-- Produits -- Début -->
+        <div fxLayout="column" fxLayoutGap="20px">
+          <div>
+            <h1 class="title">NOTRE SÉLECTION DES PRODUITS PROMOTION</h1>
+          </div>
+          <!-- fxLayout.xs="column" fxLayoutAlign.xs="center center" -->
+          <div fxLayout.gt-xs="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%" >
+            <app-product-card [promotion]="item"   fxFlex.sm="47" fxFlex.gt-sm="30" *ngFor="let item of [15,30,40,45,35,60,35,40,50,55,70]" ></app-product-card>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+          </div>
+        </div>
+      <!-- Produits -- Fin -->
+
+      <!-- Avec un code promo... -- Début -->
+
+      <!-- Avec un code promo... -- Fin -->
+
+    </div>
+  <!-- Promotion container - Fin -->
+
+</div>
+<!-- Promotion-- Fin -->
+

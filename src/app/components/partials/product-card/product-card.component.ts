@@ -9,6 +9,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input() btnAcheter : boolean = true;
   @Input() badgeNew : boolean = false;
+  @Input() promotion : number = 0;
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 <div  fxLayout="column" class="product-card" >
   <div *ngIf="badgeNew" class="nouveau" fxLayout="row"><span>Nouveau</span></div>
+  <div *ngIf="promotion" class="promo" fxLayout="row" fxLayoutAlign="center center"><span> - {{promotion}} %</span></div>
   <div  fxLayout="row" >
     <img class="img-product" fxFlex src="assets/images/sm-footer-1.jpg" alt="">
   </div>

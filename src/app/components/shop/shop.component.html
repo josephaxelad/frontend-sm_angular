@@ -22,8 +22,8 @@
 
       <!-- Produits -- Début -->
         <div fxLayout="column">
-          <div fxLayout="row wrap"  fxLayoutGap="3%" fxLayoutGap.xs="0%">
-            <app-product-card fxFlex.xs="100" fxFlex.sm="47" fxFlex="30" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11]" ></app-product-card>
+          <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%">
+            <app-product-card  fxFlex.sm="47" fxFlex="30" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11]" ></app-product-card>
           </div>
           <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
             <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>

@@ -11,6 +11,7 @@ import { ProductCardComponent } from './components/partials/product-card/product
 import { SliderComponent } from './components/partials/slider/slider.component';
 import { SliderHomeComponent } from './components/home/slider-home/slider-home.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { PromotionComponent } from './components/promotion/promotion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShopComponent } from './components/shop/shop.component';
     ProductCardComponent,
     SliderComponent,
     SliderHomeComponent,
-    ShopComponent
+    ShopComponent,
+    PromotionComponent
   ],
   imports: [
     BrowserModule,
