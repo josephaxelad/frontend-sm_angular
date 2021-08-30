@@ -12,6 +12,7 @@ import { SliderComponent } from './components/partials/slider/slider.component';
 import { SliderHomeComponent } from './components/home/slider-home/slider-home.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PromotionComponent } from './components/promotion/promotion.component';
     SliderComponent,
     SliderHomeComponent,
     ShopComponent,
-    PromotionComponent
+    PromotionComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
