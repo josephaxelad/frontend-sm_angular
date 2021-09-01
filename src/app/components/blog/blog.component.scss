@@ -1,106 +1,22 @@
 .title{
   color: #D89065 ;
-  padding-bottom: 100px;
+  padding-bottom: 11px;
 }
 
 .img{
-  width: 500px;
-  height: 470px;
+  height: 500px;
   border-radius: 15px 15px 0px 0px;
-  @media only screen and (max-width: 600px) {
-    width: 350px;
-    height: 300px;
-  }
 }
 
-.TextCat1{
-  line-height: 2.2rem;
+.title-2{
   color: #D89065 ;
-  font-size: 32px;
-  margin-left: 535px;
-  margin-top: -515px;
-
-
-    @media only screen and (max-width: 1000px) {
-      font-size: 25px;
-      margin-left: 5px;
-      margin-top: -25px;
-    }
 }
 
-.Text1{
+.text{
   line-height: 1.1rem;
   font-weight: bold;
-  margin-left: 535px;
-  margin-top: -410px;
-  padding-bottom: 130px;
-
-  @media (max-width: 1000px) {
-    line-height: 1.5rem;
-    margin-left: 5px;
-    margin-top: -1px;
-  }
-
 }
 
-
-.TextCat2{
-  text-align: center;
-  line-height: 2.2rem;
-  color: #D89065 ;
-  font-size: 32px;
-  margin-left: -600px;
-  margin-top: -450px;
-
-  @media only screen and (max-width: 1000px) {
-    font-size: 25px;
-    margin-left: 1px;
-    margin-top: -2px;
-    text-align: left;
-  }
-}
-
-.Text2{
-  width: 600px;
-  line-height: 1.1rem;
-  font-weight: bold;
-  margin-left: -20px;
-  margin-top: -350px;
-  padding-bottom: 130px;
-  font-size: clarp(1rem, 2.5vm, 5rem);
-  @media only screen and (max-width: 1000px) {
-    width: auto;
-    line-height: 1.5rem;
-    margin-left: 5px;
-    margin-top: -1px;
-  }
-}
-
-.conseil-card{
-
-  margin-bottom: 50px;
-
-  .img-conseil{
-    @media (max-width: 600px) {
-      height: 300px;
-    }
-    border-radius: 15px 15px 0px 0px;
-    height: 300px;
-  }
-
-}
-
-.actu-card{
-  border-radius: 15px;
-  margin-bottom: 15px;
-
-  .img-conseil{
-    border-radius: 15px 15px 0px 0px;
-    height: 300px;
-  }
-
-
-}
 
 .category-name{
   .name1{
