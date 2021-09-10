@@ -4,6 +4,85 @@
   <!-- Cart Container -- Début -->
     <div class="container" fxLayout="column" fxLayoutGap="60px" >
 
+      <div fxLayout="row" >
+        <h1 class="title">Panier</h1>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" >
+        <div fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="start center" fxLayoutGap="5%" fxLayoutGap.xs="0%">
+          <h1 class="title1" fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100" fxFlex.gt-sm="25%"><span>Votre commande</span></h1>
+          <div class="parenthese" fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100">(1 Produit)</div>
+          <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="21" fxFlex="47" fxFlex.xs="100" class="btn btn-access" href="javascript:void(0)" ><span>Commander »</span></a>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutGap="10px" >
+        <div class="textPanier" fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" fxLayoutGap.xs="0%">
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Produit</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Quantité</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Contenance</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Prix unitaire</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Total</span></div>
+        </div>
+        <div class="trait_dessus"></div>
+        <div class="textPanier" fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="start center" fxLayoutGap="3%" fxLayoutGap.xs="0%">
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>Fluide matifiant 30 ml</span></div>
+          <a href="javascript:void(0)" class="btn btn" fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="1" fxFlex="47" fxFlex.xs="100">-</a>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="10" fxFlex="47" fxFlex.xs="100">1</div>
+          <a href="javascript:void(0)" class="btn btn-2" fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="11" fxFlex="47" fxFlex.xs="100">+</a>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>30 ml</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>17.70€</span></div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="30" fxFlex="47" fxFlex.xs="100"><span>17.70€</span></div>
+        </div>
+      </div>
+      <div class="trait_dessus"></div>
+      <div fxLayout="column" class="textPanier3">
+        Code promo:
+        <div fxLayout="row">
+          <input class="inputForm" type="text" fxFlex.gt-md="16" name="" id="" placeholder="Entrez votre code ici">
+          <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="11" fxFlex="47" fxFlex.xs="100" class="btn btn-valider" href="javascript:void(0)" ><span>Valider</span></a>
+          <div class="textPanier" fxLayoutAlign="end end"  fxFlex.gt-md="40" fxFlex="47" fxFlex.xs="100">Sous-total</div>
+          <div class="textPanier" fxLayoutAlign="end end"  fxFlex.gt-md="17" fxFlex="47" fxFlex.xs="100">17.70€</div>
+        </div>
+
+        <div fxLayout="row">
+          <div class="textPanier2" fxLayoutAlign="end end"  fxFlex.gt-md="76.5" fxFlex="47" fxFlex.xs="100">Frais de livraison</div>
+          <div class="textPanier2" fxLayoutAlign="end end"  fxFlex.gt-md="14" fxFlex="47" fxFlex.xs="100">4.50€</div>
+        </div>
+        <div id="trait_dessous" fxLayout="row">
+          <h4  fxFlex.gt-md="69" class="title4">Total</h4>
+          <h4 class="title4">22.20€</h4>
+
+        </div>
+        <div fxLayout="column">
+          <span class="title5">Toutes taxes incluses (TTC)</span>
+        </div>
+        <div id="trait_dessous">
+          <span class="title6">Livraison OFFERTE dès 40€ d'achat</span>
+        </div>
+        <div fxLayout="column" fxLayoutGap="1%" class="PoursuivreCommander">
+          <div fxLayout="row" fxLayout.xs="row wrap" fxLayoutAlign="end end" fxLayoutGap="2%" fxLayoutGap.xs="0%">
+            <a fxLayout="row" fxLayoutAlign="center center" fxFlex.gt-md="23.8" fxFlex="47" fxFlex.xs="100" class="btn btn-Poursuivre" href="javascript:void(0)" ><span>Poursuivre mes achats ›</span></a>
+            <a fxLayout="row" fxLayoutAlign="start center" fxFlex.gt-md="21" fxFlex="47" fxFlex.xs="100" class="btn btn-Commander" href="javascript:void(0)" ><span>Commander »</span></a>
+          </div>
+        </div>
+      </div>
+
+      <span class="restez-connecte">RESTEZ CONNECTÉ</span>
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" fxLayoutGap="1px" fxLayoutGap.xs="15%" >
+
+        <a class="boutique-conseil" href="javascript:void(0)" fxFlex="7" fxFlex.xs="30"  fxLayout="column" fxLayoutAlign="center center">
+          <img height="53"  src="assets/images/Fichier 7@2x.png" alt="">
+        </a>
+
+        <a class="boutique-conseil" href="javascript:void(0)" fxFlex="7" fxFlex.xs="30" fxLayout="column" fxLayoutAlign="center center">
+          <img height="53" src="assets/images/Fichier 8@2x.png" alt="">
+        </a>
+
+        <a class="boutique-conseil" href="javascript:void(0)" fxFlex="7" fxFlex.xs="30" fxLayout="column" fxLayoutAlign="center center">
+          <img height="53" src="assets/images/Fichier 9@2x.png" alt="">
+        </a>
+
+      </div>
 
     </div>
   <!-- Cart container - Fin -->
