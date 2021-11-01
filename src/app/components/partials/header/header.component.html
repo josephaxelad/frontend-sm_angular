@@ -1,5 +1,5 @@
 <!-- Header  -- Début -->
-  <div fxLayout="column" id="header" >
+  <div fxLayout="column" fxHide fxShow.gt-sm id="header" >
 
     <!-- Header Container -- Début -->
       <div fxLayout='column' class="container">
@@ -56,8 +56,53 @@
 <!-- Header  -- Fin  -->
 
 <!-- Header mobile -- Header  -->
+  <header class="header_mobile">
 
+    <div fxLayout="row" id="en" >
+      <a class="img" href="javascript:void(0)">En <img width="13" height="16" src="assets/images/icones/down-arrow.png" alt=""></a>
+    </div>
+
+    <!-- Logo -->
+    <div fxLayout="column" fxLayoutAlign="center center" >
+      <img class="img" src="assets/images/icones/logo.png" height="45"  alt="">
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="10px" >
+      <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/search.png" alt=""></a>
+      <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/user.png" alt=""></a>
+      <a href="javascript:void(0)" id="cart" class="position-relative"><img class="img" width="25" height="25" src="assets/images/icones/cart.png" alt="">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill img">+99</span>
+      </a>
+    </div>
+
+      <div class="navigation">
+        <input type="checkbox" class="toggle-menu">
+        <div class="iconMenu_mobile"></div>
+          <ul class="menu_mobile">
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/accueil']" routerLinkActive="active"  >Accueil</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/boutique']" routerLinkActive="active"  >Boutique</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/promotion']" routerLinkActive="active"  >Promotion</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/blog']" routerLinkActive="active"  >Blog</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)"  >Ambassadeurs</a>
+            </li>
+          </ul>
+      </div>
+  </header>
 <!-- Header mobile -- Fin -->
+
+
+
+
+
 
 
 
