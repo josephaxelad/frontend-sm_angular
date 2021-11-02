@@ -13,6 +13,7 @@ import { SliderHomeComponent } from './components/home/slider-home/slider-home.c
 import { ShopComponent } from './components/shop/shop.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BlogComponent } from './components/blog/blog.component';
     SliderHomeComponent,
     BlogComponent,
     ShopComponent,
-    PromotionComponent
+    PromotionComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,125 @@
+.title{
+  font-size: x-large;
+  color: #693D2A;
+  padding-top: 50px;
+}
+
+.title1{
+  color: #693D2A;
+}
+
+
+.ttc{
+  font-size: 15px;
+}
+
+.offre{
+  font-size: 20px;
+  color: #9E7C6B;
+  padding-top: 10px;
+
+}
+
+.products-qty{
+  font-size: x-large;
+}
+
+#total{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 10px 0;
+  .price{
+    color: #693D2A;
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+}
+
+.cart-tbody{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+
+.cart-thead{
+  font-size: x-large;
+  padding-bottom: 5px;
+  font-family: '-webkit-pictograph';
+}
+
+.text{
+  font-size: x-large;
+  font-family: '-webkit-pictograph'
+}
+
+.textPanier3{
+  font-size: 23px;
+  font-family: '-webkit-pictograph';
+
+}
+
+#code-promo{
+  #title{
+    margin-bottom: 9px;
+    font-size: x-large;
+    font-family: '-webkit-pictograph';
+  }
+  margin-bottom: 20px;
+}
+
+
+.inputForm{
+  border-radius: 10px 0 0 10px;
+  background-color: #DDDCDB;
+  text-align: center;
+  font-size: 15px;
+}
+
+
+.btn-access{
+  background-color: #693D2A;
+  color: white;
+  padding: 1px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 3px;
+}
+
+.btn-valider{
+  background-color: #693D2A;
+  color: white;
+  padding: 1px 18px;
+  border-radius: 0 10px 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.btn-Poursuivre{
+  color: #693D2A;
+  padding: 7px 15px;
+  border: 1px solid #693D2A;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-Commander{
+  background-color: #693D2A;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.restez-connecte{
+  margin-top: 100px;
+  text-align: center;
+  font-size: 25px;
+  color: #693D2A;
+  font-weight: bold;
+}
