@@ -1,3 +1,4 @@
+
 //Création de la classe Carousel
 class Carousel {
 
@@ -27,7 +28,8 @@ class Carousel {
     this.container = this.createDivWithClass('carousel--container')
     this.root.appendChild(this.container)
     this.element.appendChild(this.root)
-
+    console.log(this.element)
+    console.log('test')
 
     this.items = children.map(child => {
       let item = this.createDivWithClass('carousel--item')
@@ -135,10 +137,20 @@ class Carousel {
 
 
 //attendre le chargement de la page (chargement du DOM)
-document.addEventListener('DOMContentLoaded', function () {
-  new Carousel(document.querySelector('#carousel-featured-product'), {
-    slidesToScroll: 1,
-    slidesVisible: 3,
-  })
-})
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   new Carousel(document.querySelector('#carousel-featured-product'), {
+  //     slidesToScroll: 1,
+  //     slidesVisible: 3,
+  //   })
+  // })
+
+
+function initCarousel() {
+    new Carousel(document.querySelector('#carousel-featured-product'), {
+      slidesToScroll: 1,
+      slidesVisible: 3,
+    })
+}
+
+
 

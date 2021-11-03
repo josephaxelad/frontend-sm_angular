@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare const initCarousel : any;
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    initCarousel();
+
+
   }
+
+
 
 }
