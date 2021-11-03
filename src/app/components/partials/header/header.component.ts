@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  showMobileHeader = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isShowMobileHeader(){
+    this.showMobileHeader = true
+    console.log(this.showMobileHeader)
   }
 
 }

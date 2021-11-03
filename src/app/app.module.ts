@@ -14,6 +14,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CartComponent } from './components/cart/cart.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartComponent } from './components/cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

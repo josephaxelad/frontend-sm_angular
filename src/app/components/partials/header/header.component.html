@@ -1,5 +1,5 @@
 <!-- Header  -- Début -->
-  <div fxLayout="column" id="header" >
+  <div fxLayout="column" fxHide fxShow.gt-sm id="header" >
 
     <!-- Header Container -- Début -->
       <div fxLayout='column' class="container">
@@ -54,6 +54,83 @@
 
   </div>
 <!-- Header  -- Fin  -->
+
+
+
+<!-- Header mobile -- Header  -->
+  <header class="header_mobile" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <div fxLayout="row" fxLayoutGap="10px" >
+      <!-- <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/search.png" alt=""></a> -->
+
+      <a href="javascript:void(0)" id="cart" class="position-relative"><img class="img" width="30" height="30" src="assets/images/icones/cart.png" alt="">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill img">+99</span>
+      </a>
+    </div>
+
+
+
+    <!-- Logo -->
+    <div fxLayout="column" fxLayoutAlign="center center" >
+      <img class="img" src="assets/images/icones/logo.png" height="45"  alt="">
+    </div>
+
+
+
+      <div class="navigation">
+        <input type="checkbox" [checked]="showMobileHeader" [(ngModel)]="showMobileHeader" class="toggle-menu">
+        <div class="iconMenu_mobile"></div>
+
+        <div class="menu_mobile">
+
+          <div class="header-menu-mobile" fxLayout="column"  >
+
+            <div fxLayout="row"  fxLayoutAlign="space-between center" >
+
+              <div fxLayout="row" id="en" >
+                <a href="javascript:void(0)">En <img width="16" height="16" src="assets/images/icones/down-arrow.png" alt=""></a>
+              </div>
+              <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/user.png" alt=""></a>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="center center" >
+              <img class="img" src="assets/images/icones/logo_blanc.png" height="45"  alt="">
+            </div>
+
+            <div class="connected-user" fxLayout="row"  fxLayoutAlign="center center">
+              <a href="javascript:void(0)">utilisateur</a>&nbsp;<i style="background-color: chartreuse;width: 10px;height: 10px;border-radius: 50%;" ></i>
+            </div>
+
+          </div>
+
+          <ul >
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/accueil']" routerLinkActive="active"  (click)="showMobileHeader = false" >Accueil</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/boutique']" routerLinkActive="active"  (click)="showMobileHeader = false" >Boutique</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/promotion']" routerLinkActive="active"  (click)="showMobileHeader = false" >Promotion</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/blog']" routerLinkActive="active"  (click)="showMobileHeader = false" >Blog</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" (click)="showMobileHeader = false"  >Ambassadeurs</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div fxHide fxLayout="row" id="en" >
+      <a class="img" href="javascript:void(0)">En <img width="13" height="16" src="assets/images/icones/down-arrow.png" alt=""></a>
+    </div> -->
+  </header>
+<!-- Header mobile -- Fin -->
+
+
+
 
 
 
