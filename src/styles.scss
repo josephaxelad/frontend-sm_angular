@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-// #main{
-//   margin-top: 140px;
-// }
+@media screen and (max-width: 960px){
+  #main{
+    margin-top: 65px;
+  }
+}
+
 
 /* Carousel */
 

@@ -13,6 +13,7 @@ import { SliderHomeComponent } from './components/home/slider-home/slider-home.c
 import { ShopComponent } from './components/shop/shop.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BlogComponent } from './components/blog/blog.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
