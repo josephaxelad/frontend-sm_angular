@@ -23,20 +23,20 @@
                 <th fxLayoutAlign="center center" fxFlex="35">Produit</th>
                 <th fxHide fxShow.gt-sm fxLayoutAlign="center center" fxFlex="15">Quantité</th>
                 <th fxHide fxShow.gt-sm fxLayoutAlign="center center" fxFlex="25">Prix unitaire</th>
-                <th fxHide fxShow.lt-md fxLayoutAlign="center center" fxFlex="15">Qté</th>
-                <th fxHide fxShow.lt-md fxLayoutAlign="center center" fxFlex="25">Prix u.</th>
+                <th fxHide fxShow.lt-md fxLayoutAlign="center center" fxFlex>Qté</th>
+                <!-- <th fxHide.lt-md  fxLayoutAlign="center center" fxFlex="25">Prix u.</th> -->
                 <th fxLayoutAlign="center center" fxFlex="25">Total</th>
             </tr>
         </thead>
         <tbody class="cart-tbody">
-            <tr fxLayout="row">
+            <tr fxLayout="row" *ngFor="let item of [1,2,3,4,5]">
                 <td fxLayoutAlign="center center" fxFlex="35">Fluide matifiant 30 ml</td>
-                <td  fxLayout="row" fxFlex="15" fxLayoutAlign="space-between center" >
-                  <a href="javascript:void(0)" class="btn " >-</a>
+                <td  fxLayout="row" fxFlex class="counter" fxLayoutAlign="space-between center" >
+                  <a href="javascript:void(0)" class="btn btn-light btn-moins " >-</a>
                   <div >1</div>
-                  <a href="javascript:void(0)" class="btn " >+</a>
+                  <a href="javascript:void(0)" class="btn btn-light btn-plus " >+</a>
                 </td>
-                <td fxLayoutAlign="center center" fxFlex="25">17.70€</td>
+                <td fxLayoutAlign="center center" fxHide.lt-md fxFlex="25">17.70€</td>
                 <td fxLayoutAlign="center center" fxFlex="25">17.70€</td>
             </tr>
         </tbody>
@@ -68,9 +68,9 @@
           </div>
 
           <div id="total">
-            <div class="price"  fxLayoutAlign="space-between center" >
-              <h4 >Total</h4>
-              <h4 >22.20€</h4>
+            <div fxLayoutAlign="space-between center" >
+              <div fxLayout="row" fxLayoutAlign="center center"><h4 class="price" >Total</h4>&nbsp;<h6>(livraison non incluse)</h6></div>
+              <h4 class="price" >22.20€</h4>
           </div>
 
           <div fxLayout="row" >
