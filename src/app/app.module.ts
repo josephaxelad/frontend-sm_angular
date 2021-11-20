@@ -15,6 +15,8 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/user/login/login.component';
+import { SignupComponent } from './components/user/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     BlogComponent,
     ShopComponent,
     PromotionComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
