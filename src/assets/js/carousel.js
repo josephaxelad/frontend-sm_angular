@@ -20,7 +20,7 @@ class Carousel {
     this.currentItem = 0
 
     let children_ = [].slice.call(element.children)
-    let children = children_.filter((child) => child.tagName != "A")
+    let children = children_.filter((child) => child.nodeName == "APP-PRODUCT-CARD") //child.tagName != "A"
 
 
 
@@ -28,8 +28,6 @@ class Carousel {
     this.container = this.createDivWithClass('carousel--container')
     this.root.appendChild(this.container)
     this.element.appendChild(this.root)
-    console.log(this.element)
-    console.log('test')
 
     this.items = children.map(child => {
       let item = this.createDivWithClass('carousel--item')
@@ -37,6 +35,7 @@ class Carousel {
       this.container.appendChild(item)
       return item
     });
+
 
     this.setStyle()
     this.createNavigation()
@@ -98,7 +97,6 @@ class Carousel {
     if (this.currentItem + this.slidesToScroll + this.slidesVisible <= this.items.length) {
       this.gotToItem(this.currentItem + this.slidesToScroll)
     }
-
   }
 
   prev(){
@@ -146,10 +144,13 @@ class Carousel {
 
 
 function initCarousel() {
-    new Carousel(document.querySelector('#carousel-featured-product'), {
-      slidesToScroll: 1,
-      slidesVisible: 3,
-    })
+    if (document.querySelector('#carousel-featured-product')) {
+      new Carousel(document.querySelector('#carousel-featured-product'), {
+        slidesToScroll: 1,
+        slidesVisible: 3,
+      })
+    }
+
 }
 
 

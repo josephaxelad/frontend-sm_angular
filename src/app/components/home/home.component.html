@@ -17,12 +17,12 @@
 
           <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" fxLayoutGap="10%" fxLayoutGap.xs="15%" >
 
-            <a class="boutique-conseil" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30"  fxLayout="column" fxLayoutAlign="center center">
+            <a class="boutique-conseil" routerLink="/boutique" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30"  fxLayout="column" fxLayoutAlign="center center">
               <img height="125"  src="assets/images/Fichier 3@2x.png" alt="">
               <div ><b><img height="8" src="assets/images/icones/right-arrow.png" alt=""> Boutique</b></div>
             </a>
 
-            <a class="boutique-conseil" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30" fxLayout="column" fxLayoutAlign="center center">
+            <a class="boutique-conseil" routerLink="/blog" href="javascript:void(0)" fxFlex="20" fxFlex.xs="30" fxLayout="column" fxLayoutAlign="center center">
               <img height="125" src="assets/images/Fichier 2@2x.png" alt="">
               <div ><b><img height="8" src="assets/images/icones/right-arrow.png" alt=""> Conseils</b></div>
             </a>
@@ -32,25 +32,19 @@
       <!-- Hello que cherchez-vous ? -- Fin -->
 
       <!-- Notre sélection du moment -- Début -->
-        <div fxLayout="column" >
+        <div fxLayout="column" *ngIf="products.length" >
           <div>
             <h1 class="title">NOTRE SÉLECTION DU MOMENT...</h1>
           </div>
 
           <!-- fxLayout="row" fxLayoutAlign="space-between  center" fxLayoutGap="25px" -->
-          <div id="carousel-featured-product">
+          <div id="carousel-featured-product"  >
             <a href="javascript:void(0)" class="btn-prev" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/left-arrow-white.png" alt=""></a>
-            <app-product-card [badgeNew]="true" ></app-product-card>
-            <app-product-card ></app-product-card>
-            <app-product-card ></app-product-card>
-            <app-product-card ></app-product-card>
-            <app-product-card ></app-product-card>
-            <app-product-card ></app-product-card>
-            <app-product-card ></app-product-card>
+            <app-product-card [badgeNew]="true" [product]="product" *ngFor="let product of products " ></app-product-card>
             <a href="javascript:void(0)"  class="btn-next" fxLayout="row" fxLayoutAlign="center center"><img height="40" width="40" src="assets/images/icones/right-arrow-white.png" alt=""></a>
           </div>
           <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
-            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+            <a href="javascript:void(0)" routerLink="/boutique" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
           </div>
         </div>
       <!-- Notre sélection du moment -- Fin -->

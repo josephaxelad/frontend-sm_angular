@@ -1,16 +1,16 @@
 <div  fxLayout="column" class="product-card" >
   <div *ngIf="badgeNew" class="nouveau" fxLayout="row"><span>Nouveau</span></div>
-  <div *ngIf="promotion" class="promo" fxLayout="row" fxLayoutAlign="center center"><span> - {{promotion}} %</span></div>
+  <div *ngIf="product?.inPromotion" class="promo" fxLayout="row" fxLayoutAlign="center center"><span> - {{product?.promotionRate}} %</span></div>
   <div  fxLayout="row" >
-    <img class="img-product" fxFlex src="assets/images/sm-footer-1.jpg" alt="">
+    <img class="img-product" fxFlex [src]="prefUrlProductsImage+product?.picture!" alt="">
   </div>
   <div  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
     <div fxLayout="row"><i *ngFor="let item of [1,2,3,4,5]" class="etoile">&#9733;</i>(6)</div>
     <div fxLayout="column" fxLayoutAlign="center center" class="category-name">
-      <a href="javascript:void(0)" class="categorie">SOIN DU CORPS</a>
-      <a href="javascript:void(0)" class="nameProduct"><b>GAMME NÉFERTITI </b></a>
+      <a href="javascript:void(0)" class="categorie">{{product?.categoryName}}</a>
+      <a href="javascript:void(0)" class="nameProduct"><b>{{product?.name}}</b></a>
     </div>
-    <div><h5 class="product-price"><b>100 €</b></h5></div>
+    <div fxLayout="row"><h5 [ngClass]="{'promotion': product.inPromotion}" class="product-price"><b>{{product?.price}} €</b></h5> &nbsp; <h5 *ngIf="product.inPromotion" class="product-price"><b>{{product?.promotionPrice}} €</b></h5></div>
   </div>
   <a *ngIf="btnAcheter" class="btn btn-acheter" href="javascript:void(0)" ><span>ACHETER</span></a>
   <!--<a class="btn-acheter" href="javascript:void(0)"><span>Acheter</span></a> #}-->

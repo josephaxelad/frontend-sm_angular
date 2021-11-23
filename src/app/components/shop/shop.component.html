@@ -12,21 +12,22 @@
 
       <!-- Filtre -- Début -->
       <div id="filtre-produits" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px"  >
-          <a fxLayout="row"  class="btn btn-filtre active" href="javascript:void(0)" ><span >TOUS</span></a>
-          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SOIN DE VISAGE</span></a>
-          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SOIN DU CORPS</span></a>
-          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >SANTE FEMININE</span></a>
-          <a fxLayout="row"  class="btn btn-filtre" href="javascript:void(0)" ><span >HOMME</span></a>
+          <a class="btn btn-filtre" (click)="getProductByCategories(null)" [ngClass]="{'active': !categorySelected}" href="javascript:void(0)" >
+            <span >Tous</span>
+          </a>
+          <a *ngFor="let category of categories" fxLayout="row" (click)="getProductByCategories(category.name)" [ngClass]="{'active': categorySelected==category.name}"  class="btn btn-filtre" href="javascript:void(0)" >
+            <span >{{category.name}}</span>
+          </a>
       </div>
       <!-- Filtre -- Fin -->
 
       <!-- Produits -- Début -->
         <div fxLayout="column">
           <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%">
-            <app-product-card  fxFlex.sm="47" fxFlex="30" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11]" ></app-product-card>
+            <app-product-card  fxFlex.sm="47" fxFlex="30" *ngFor="let product of products" [product]="product" ></app-product-card>
           </div>
-          <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
-            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+          <div *ngIf="isShowMoreProducts" (click)="showMoreProducts()" fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
           </div>
         </div>
       <!-- Produits -- Fin -->

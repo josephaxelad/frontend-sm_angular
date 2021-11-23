@@ -17,11 +17,11 @@
           </div>
           <!-- fxLayout.xs="column" fxLayoutAlign.xs="center center" -->
           <div fxLayout.gt-xs="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%" >
-            <app-product-card [promotion]="item"   fxFlex.sm="47" fxFlex.gt-sm="30" *ngFor="let item of [15,30,40,45,35,60,35,40,50,55,70]" ></app-product-card>
+            <app-product-card [product]="product"   fxFlex.sm="47" fxFlex.gt-sm="30" *ngFor="let product of products" ></app-product-card>
           </div>
 
           <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
-            <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR TOUS LES PRODUITS</a>
+            <a *ngIf="isShowMoreProducts" href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
           </div>
         </div>
       <!-- Produits -- Fin -->

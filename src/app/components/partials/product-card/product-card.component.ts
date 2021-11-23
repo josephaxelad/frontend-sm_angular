@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-card',
@@ -9,7 +11,8 @@ export class ProductCardComponent implements OnInit {
 
   @Input() btnAcheter : boolean = true;
   @Input() badgeNew : boolean = false;
-  @Input() promotion : number = 0;
+  @Input() product!: Product;
+  prefUrlProductsImage = `${environment.prefUrlProductsImage}`;
 
   constructor() { }
 
