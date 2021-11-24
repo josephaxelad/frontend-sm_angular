@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertComponent } from './components/partials/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     PromotionComponent,
     CartComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
