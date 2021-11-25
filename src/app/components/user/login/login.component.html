@@ -6,7 +6,57 @@
 
       <!-- Login -- Début -->
       <div fxLayout="column" >
+        <div  fxLayout="row" fxFlex="120px"  fxLayoutAlign="center center"  >
+          <div fxLayout="row" fxFlex fxLayoutAlign="space-around center" class="login">
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/panier']" routerLinkActive="active"  >Panier</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/connexion']" routerLinkActive="active"  >Je m'identifie</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" [routerLink]="['/inscription']" routerLinkActive="active"  >Je créé mon Compte</a>
+            </li>
+          </div>
+        </div>
 
+        <span class="textspan" fxFlex="120px" fxLayoutAlign="center center" >Je me connecte à mon compte</span>
+
+        <div fxLayout="column" fxLayoutAlign="center center" fxFlex="95px" fxLayoutGap="25px">
+          <input fxFlex placeholder="E-mail*" class="input" type="text">
+          <input fxFlex placeholder="Mot de passe*" class="input" type="text">
+        </div><br>
+        <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Se connecter</a>
+
+        <div fxLayout="row" fxFlex="120px" fxLayoutAlign="center center" fxLayoutGap="8px">
+          <input type="checkbox" id="inputCheckbox">
+          <label for="resterConnecter">Rester connecté/e</label><br>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <span id="mdp_oublie">Mot de passe oublié ?</span>
+          <a href="javascript:void(0)" id="nouveau_compte">Créer un nouveau compte</a>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="400px">
+        <span class="restez-connecte">RESTEZ CONNECTÉ</span>
+        <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="5px" fxLayoutGap.xs="15%" >
+
+          <a href="javascript:void(0)"  fxLayoutAlign="center center">
+            <img height="53"  src="assets/images/Fichier 7@2x.png" alt="">
+          </a>
+
+          <a href="javascript:void(0)"  fxLayoutAlign="center center">
+            <img height="53" src="assets/images/Fichier 8@2x.png" alt="">
+          </a>
+
+          <a href="javascript:void(0)"  fxLayoutAlign="center center">
+            <img height="53" src="assets/images/Fichier 9@2x.png" alt="">
+          </a>
+
+        </div>
       </div>
       <!-- Login -- Fin -->
 
