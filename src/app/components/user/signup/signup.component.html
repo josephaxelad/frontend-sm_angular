@@ -6,6 +6,7 @@
 
       <!-- SignUp -- Début -->
       <div fxLayout="column" >
+
         <div  fxLayout="row" fxFlex="120px"  fxLayoutAlign="center center"  >
           <div fxLayout="row" fxFlex fxLayoutAlign="space-around center" class="login">
             <li>
@@ -20,31 +21,55 @@
           </div>
         </div>
 
-        <div fxLayout="row" fxFlex="120px" fxLayoutAlign="center center" fxLayoutGap="200px">
-          <div><input type="checkbox" class="checkbox_sex"><span>Mme</span></div>
-          <div><input type="checkbox" class="checkbox_sex"><span >M</span></div>
+        <!-- Title -- Je me connecte à mon compte -- Début -->
+        <div  fxLayout="row" fxLayoutAlign="center center" >
+          <h1 class="title-1"  >Je crée un compte</h1>
         </div>
+        <!-- Title -- Je me connecte à mon compte -- Fin -->
 
-        <div fxLayout="column" fxLayoutAlign="center center" fxFlex="300px" fxLayoutGap="25px">
-          <input fxFlex placeholder="Prénom*" class="input" type="text">
-          <input fxFlex placeholder="Nom*" class="input" type="text">
-          <input fxFlex placeholder="E-mail*" class="input" type="text">
-          <input fxFlex placeholder="Confirmer l'adresse e-mail*" class="input" type="text">
-          <input fxFlex placeholder="Mot de passe **" class="input" type="text">
-          <input fxFlex placeholder="Confirmer le mot de passe*" class="input" type="text">
-        </div><br>
+        <!-- Login -- Login -- Début  -->
+        <div fxLayout="column" fxLayoutGap="35px">
 
-        <div fxLayout="row" fxFlex="120px" fxLayoutAlign="center center" fxLayoutGap="10px">
-          <input type="checkbox" id="inputCheckbox">
-          <label for="politique">Oui, j'ai lu et j'accepte la Politique de Protection des Données</label><br>
+          <div fxLayout="row" fxLayoutAlign="space-around center" >
+            <div><input type="checkbox" class="checkbox_sex"><span>Mme</span></div>
+            <div><input type="checkbox" class="checkbox_sex"><span >M</span></div>
+          </div>
+
+          <div fxLayout="row"  fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" fxLayoutGap="25px" >
+              <div fxFill><input fxFlex placeholder="Nom*" class="input" type="text"></div>
+              <div fxFill><input fxFlex placeholder="E-mail*" class="input" type="text"></div>
+              <div fxFill><input fxFlex placeholder="Confirmer l'adresse e-mail*" class="input" type="text"></div>
+              <div fxFill><input fxFlex placeholder="Mot de passe **" class="input" type="text"></div>
+              <div fxFill><input fxFlex placeholder="Confirmer le mot de passe*" class="input" type="text"></div>
+            </div>
+          </div>
+
+          <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="15px">
+            <input type="checkbox" id="inputCheckbox">
+            <label for="politique">Oui, j'ai lu et j'accepte la Politique de Protection des Données</label><br>
+          </div>
+
+
+
+          <div fxLayout="row"  fxLayoutAlign="center center">
+            <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Valider et créer mon compte</a>
+          </div>
+
+
         </div>
+        <!-- Login -- Login -- Fin  -->
 
-        <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Valider et créer mon compte</a>
+
+
+
+
+
 
 
       </div>
 
-      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="400px">
+      <div fxLayout="column" fxLayoutAlign="center center" >
         <span class="restez-connecte">RESTEZ CONNECTÉ</span>
         <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="5px" fxLayoutGap.xs="15%" >
 

@@ -1,3 +1,10 @@
+.title-1{
+  color: #693D2A;
+  font-weight: bold;
+  padding-bottom: 11px;
+  margin-bottom: 30px;
+}
+
 .login{
   list-style: none;
   li{
@@ -42,8 +49,8 @@
     border: 1px;
     background-color: #DDDCDB;
     padding-left: 10px;
-    align-items: center;
-    width: 46%;
+    height: 40px;
+    width: 100%;
 }
 
 .input:focus{
@@ -62,8 +69,6 @@
 }
 
 #inputCheckbox{
-    margin-left: -3%;
-    width: 20px;
     height: 20px;
 
 }

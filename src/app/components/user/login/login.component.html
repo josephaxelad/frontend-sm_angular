@@ -5,7 +5,8 @@
     <div class="container" fxLayout="column" fxLayoutGap="60px" >
 
       <!-- Login -- Début -->
-      <div fxLayout="column" >
+      <div fxLayout="column"  >
+
         <div  fxLayout="row" fxFlex="120px"  fxLayoutAlign="center center"  >
           <div fxLayout="row" fxFlex fxLayoutAlign="space-around center" class="login">
             <li>
@@ -20,27 +21,55 @@
           </div>
         </div>
 
-        <span class="textspan" fxFlex="120px" fxLayoutAlign="center center" >Je me connecte à mon compte</span>
-
-        <div fxLayout="column" fxLayoutAlign="center center" fxFlex="95px" fxLayoutGap="25px">
-          <input fxFlex placeholder="E-mail*" class="input" type="text">
-          <input fxFlex placeholder="Mot de passe*" class="input" type="text">
-        </div><br>
-        <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Se connecter</a>
-
-        <div fxLayout="row" fxFlex="120px" fxLayoutAlign="center center" fxLayoutGap="8px">
-          <input type="checkbox" id="inputCheckbox">
-          <label for="resterConnecter">Rester connecté/e</label><br>
+        <!-- Title -- Je me connecte à mon compte -- Début -->
+        <div  fxLayout="row" fxLayoutAlign="center center" >
+          <h1 class="title-1"  >Je me connecte à mon compte</h1>
         </div>
+        <!-- Title -- Je me connecte à mon compte -- Fin -->
 
-        <div fxLayout="column" fxLayoutAlign="center center">
-          <span id="mdp_oublie">Mot de passe oublié ?</span>
-          <a href="javascript:void(0)" id="nouveau_compte">Créer un nouveau compte</a>
+        <!-- Login -- Login -- Début  -->
+        <div fxLayout="column" fxLayoutGap="35px">
+
+          <div fxLayout="row"  fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" fxLayoutGap="25px" >
+              <input  placeholder="E-mail*" class="input" type="text">
+              <input  placeholder="Mot de passe*" class="input" type="text">
+            </div>
+          </div>
+
+          <div fxLayout="row"  fxLayoutAlign="center center">
+            <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Se connecter</a>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center"  fxLayoutAlign.xs="center center">
+
+            <div fxLayout="column" fxLayoutGap="15px" fxFlex="60" fxFlex.xs="100">
+
+              <div fxLayout="row"  fxLayoutAlign.xs="center center" fxLayoutGap="8px">
+                <input type="checkbox" id="inputCheckbox">
+                <label for="resterConnecter">Rester connecté/e</label><br>
+              </div>
+
+              <div fxLayout="row" fxLayoutAlign.xs="center center">
+                <span id="mdp_oublie">Mot de passe oublié ?</span>
+              </div>
+
+              <div fxLayout="row" fxLayoutAlign.xs="center center">
+                <a href="javascript:void(0)" id="nouveau_compte">Créer un nouveau compte</a>
+              </div>
+
+
+            </div>
+
+          </div>
+
         </div>
+        <!-- Login -- Login -- Fin  -->
+
 
       </div>
 
-      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="400px">
+      <div fxLayout="column" fxLayoutAlign="center center" >
         <span class="restez-connecte">RESTEZ CONNECTÉ</span>
         <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="5px" fxLayoutGap.xs="15%" >
 
