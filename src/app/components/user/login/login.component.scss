@@ -1,0 +1,94 @@
+.title{
+  color: #D89065 ;
+  padding-bottom: 11px;
+}
+.title-1{
+  color: #693D2A;
+  font-weight: bold;
+  padding-bottom: 11px;
+  margin-bottom: 30px;
+}
+
+.login{
+  list-style: none;
+  li{
+    a{
+      text-decoration: none;
+      color: #020004;
+      font-size: 120%;
+    }
+
+    a.active{
+      color: #693D2A;
+      font-weight: bold;
+    }
+
+    a:hover{
+      text-decoration: underline;
+      text-decoration-color: #693D2A;
+    }
+  }
+
+  @media(max-width: 400px){
+    li{
+      a{
+        text-decoration: none;
+        color: #020004;
+        font-size: 80%;
+      }
+      }
+  }
+}
+
+
+.input{
+    width: 100%;
+    border-radius: 12px 12px;
+    font-style: italic;
+    border: 1px;
+    background-color: #DDDCDB;
+    padding-left: 10px;
+    height: 40px;
+    // align-items: center;
+    // width: 46%;
+}
+
+.input:focus{
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-connecter{
+  background-color: #693D2A;
+  color: white;
+  border-radius: 40px;
+  width: 130px;
+  align-self: center;
+  font-weight: bold;
+}
+
+#inputCheckbox{
+    // margin-left: -31%;
+    // width: 20px;
+    height: 20px;
+}
+
+#nouveau_compte{
+    text-decoration: none;
+    color: #693D2A;
+    font-weight: bold;
+}
+
+// #mdp_oublie{
+//   // text-decoration: none;
+// }
+
+
+
+
+
+
+
+
+
