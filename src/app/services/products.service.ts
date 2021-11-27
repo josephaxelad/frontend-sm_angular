@@ -9,9 +9,8 @@ import { Product } from '../models/product';
 })
 export class ProductsService {
 
-  products!: Product[];
+  products: Product[] = [];
   products$ = new BehaviorSubject<Product[]>([]);
-
   constructor(private _http : HttpClient) {
     this.getProducts()
    }
@@ -27,9 +26,13 @@ export class ProductsService {
       },
       (error) => {
         console.log(error)
+      },
+      ()=>{
+        // this.products$.complete();
       }
     );
   }
+
 
   /**
    * émettre des catégories

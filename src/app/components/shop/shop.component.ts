@@ -24,14 +24,11 @@ export class ShopComponent implements OnInit {
   constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService) { }
 
   ngOnInit(): void {
-    this._categoriesService.getCategories();
-    this._productsService.getProducts();
 
     /**Récuperer les catégories */
     this._categoriesService.categories$.subscribe(
       (categories : Category[])=>{
         this.categories = categories
-        // console.log(categories)
 
         /**Récuperer les produits */
         this._productsService.products$.subscribe(
@@ -41,12 +38,12 @@ export class ShopComponent implements OnInit {
                 (product : Product)=> ({...product, categoryName : categories?.find((cat)=>cat._id == product.categoryId)?.name })
               )
               if (this.numberOfElementShowed<this.products_.length) {
-                this.products = this.products_?.slice(0,this.numberOfElementShowed)
+                this.products = this.products_?.slice(0,this.numberOfElementShowed);
+                this.isShowMoreProducts = true;
               }else{
                 this.products = this.products_;
                 this.isShowMoreProducts = false;
               }
-              // console.log(products)
           }
         )
       }

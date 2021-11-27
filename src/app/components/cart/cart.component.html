@@ -2,7 +2,19 @@
 <div>
 
   <!-- Cart Container -- Début -->
-    <div class="container" fxLayout="column" fxLayoutGap="60px" >
+
+    <div *ngIf="!cart.cart.length"  class="container" fxLayout="column" fxLayoutGap="60px"  >
+      <div fxLayout="column" >
+        <h1 class="title">Votre panier est vide !</h1>
+        <div fxLayout="row">
+          <a fxLayout="row" routerLink="/boutique" class="btn btn-Poursuivre" href="javascript:void(0)" >
+            <span>Effectuer des achats ›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" fxLayout="column" fxLayoutGap="60px" *ngIf="cart.cart.length" >
 
       <div fxLayout="row" >
         <h1 class="title">Panier</h1>
@@ -12,7 +24,8 @@
       <div fxLayout="row" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between center"  >
         <div fxLayout="row" fxLayoutAlign="start center">
           <h1 class="title1"><span>Votre commande</span></h1>&nbsp;&nbsp;
-          <div class="products-qty" >(1 Produit)</div>
+          <div class="products-qty" *ngIf="cart.qty==1" >({{cart.qty}} Produit)</div>
+          <div class="products-qty" *ngIf="cart.qty>1" >({{cart.qty}} Produits)</div>
         </div>
         <a  class="btn btn-access" href="javascript:void(0)" ><span>Commander »</span></a>
       </div>
@@ -20,24 +33,32 @@
       <table>
         <thead class="cart-thead">
             <tr fxLayout="row">
-                <th fxLayoutAlign="center center" fxFlex="35">Produit</th>
+                <th fxLayoutAlign="center center" fxFlex="33">Produit</th>
                 <th fxHide fxShow.gt-sm fxLayoutAlign="center center" fxFlex="15">Quantité</th>
-                <th fxHide fxShow.gt-sm fxLayoutAlign="center center" fxFlex="25">Prix unitaire</th>
+                <th fxHide fxShow.gt-sm fxLayoutAlign="center center" fxFlex="23">Prix unitaire</th>
                 <th fxHide fxShow.lt-md fxLayoutAlign="center center" fxFlex>Qté</th>
                 <!-- <th fxHide.lt-md  fxLayoutAlign="center center" fxFlex="25">Prix u.</th> -->
-                <th fxLayoutAlign="center center" fxFlex="25">Total</th>
+                <th fxLayoutAlign="center center" fxFlex="23">Total</th>
+                <th fxLayoutAlign="center center" fxFlex="6"><span><img src="/src/assets/images/icones/trash.png" alt=""></span></th>
             </tr>
         </thead>
         <tbody class="cart-tbody">
-            <tr fxLayout="row" *ngFor="let item of [1,2,3,4,5]">
-                <td fxLayoutAlign="center center" fxFlex="35">Fluide matifiant 30 ml</td>
+            <tr fxLayout="row" *ngFor="let cartLine of cart.cart, let i = index">
+                <td fxLayoutAlign="center center" fxFlex="33">{{cartLine.product?.name}}</td>
                 <td  fxLayout="row" fxFlex class="counter" fxLayoutAlign="space-between center" >
-                  <a href="javascript:void(0)" class="btn btn-light btn-moins " >-</a>
-                  <div >1</div>
-                  <a href="javascript:void(0)" class="btn btn-light btn-plus " >+</a>
+                  <a href="javascript:void(0)" class="btn btn-light btn-moins " (click)="deleteFromCart(cartLine.product!)" >-</a>
+                  <div >{{cartLine.qty}}</div>
+                  <a href="javascript:void(0)" class="btn btn-light btn-plus " (click)="addProductToCart(cartLine.product!)" >+</a>
                 </td>
-                <td fxLayoutAlign="center center" fxHide.lt-md fxFlex="25">17.70€</td>
-                <td fxLayoutAlign="center center" fxFlex="25">17.70€</td>
+                <td fxLayoutAlign="center center" fxHide.lt-md fxFlex="25">
+                  {{cartLine.product?.inPromotion ? cartLine.product?.promotionPrice : cartLine.product?.price}} €
+                </td>
+                <td fxLayoutAlign="center center" fxFlex="23">
+                  {{cartLine.product?.inPromotion ?
+                    (cartLine.product?.promotionPrice!*cartLine.qty).toFixed(2) :
+                     (cartLine.product?.price!*cartLine.qty).toFixed(2)}} €
+                </td>
+                <td fxLayoutAlign="center center" fxFlex="6"><span (click)="removeElementOfCart(i)" style="cursor: pointer;"><img  src="assets/images/icones/trash.png" alt=""></span></td>
             </tr>
         </tbody>
       </table>
@@ -59,7 +80,7 @@
 
           <div fxLayout="row" class="text" fxLayoutAlign="space-between center" >
             <div >Sous-total</div>
-            <div >17.70€</div>
+            <div >{{(cart.price).toFixed(2)}} €</div>
           </div>
 
           <div fxLayout="row" class="text" fxLayoutAlign="space-between center" >
@@ -70,7 +91,7 @@
           <div id="total">
             <div fxLayoutAlign="space-between center" >
               <div fxLayout="row" fxLayoutAlign="center center"><h4 class="price" >Total</h4>&nbsp;<h6>(livraison non incluse)</h6></div>
-              <h4 class="price" >22.20€</h4>
+              <h4 class="price" >{{(cart.price).toFixed(2)}} €</h4>
           </div>
 
           <div fxLayout="row" >
@@ -89,7 +110,7 @@
       </div>
 
       <div fxLayout="row wrap" fxLayoutAlign="end center" fxLayoutGap="1%" class="PoursuivreCommander">
-        <a fxLayout="row"  class="btn btn-Poursuivre" href="javascript:void(0)" ><span>Poursuivre mes achats ›</span></a>
+        <a fxLayout="row" routerLink="/boutique" class="btn btn-Poursuivre" href="javascript:void(0)" ><span>Poursuivre mes achats ›</span></a>
         <a fxLayout="row"  class="btn btn-Commander" href="javascript:void(0)" ><span>Commander »</span></a>
       </div>
 

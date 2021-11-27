@@ -13,7 +13,8 @@
       <!-- Produits -- Début -->
         <div fxLayout="column" fxLayoutGap="20px">
           <div>
-            <h1 class="title">NOTRE SÉLECTION DES PRODUITS PROMOTION</h1>
+            <h1 *ngIf="products.length" class="title">NOTRE SÉLECTION DES PRODUITS PROMOTION</h1>
+            <h1 *ngIf="!products.length" class="title">AUCUN PRODUIT EN PROMOTION ACTUELLEMENT !</h1>
           </div>
           <!-- fxLayout.xs="column" fxLayoutAlign.xs="center center" -->
           <div fxLayout.gt-xs="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%" >
@@ -21,7 +22,7 @@
           </div>
 
           <div fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
-            <a *ngIf="isShowMoreProducts" href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
+            <a *ngIf="isShowMoreProducts || !products.length" href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
           </div>
         </div>
       <!-- Produits -- Fin -->

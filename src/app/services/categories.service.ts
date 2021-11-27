@@ -32,6 +32,9 @@ export class CategoriesService {
             break;
         }
         console.log(error)
+      },
+      ()=>{
+        // this.categories$.complete();
       }
     );
   }

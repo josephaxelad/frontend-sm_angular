@@ -26,7 +26,10 @@
           <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign.xs="center center"  fxLayoutGap.gt-xs="3%">
             <app-product-card  fxFlex.sm="47" fxFlex="30" *ngFor="let product of products" [product]="product" ></app-product-card>
           </div>
-          <div *ngIf="isShowMoreProducts" (click)="showMoreProducts()" fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+          <div>
+            <h1 *ngIf="!products.length" class="title">AUCUN PRODUIT !</h1>
+          </div>
+          <div *ngIf="isShowMoreProducts || !products.length" (click)="showMoreProducts()" fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
             <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
           </div>
         </div>

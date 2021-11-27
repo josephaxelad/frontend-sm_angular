@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { CategoriesService } from 'src/app/services/categories.service';
@@ -17,35 +18,45 @@ export class HomeComponent implements OnInit {
 
   prefUrlProductsImage = `${environment.prefUrlProductsImage}`;
   categories: Category[] = [];
-  products!: Product[];
+  products: Product[] = [];
 
-  constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService) {}
+  constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService) {
+    this._productsService.getProducts()
+  }
 
   ngOnInit(): void {
-    this._categoriesService.getCategories();
-    this._productsService.getProducts();
+
 
     /**Récuperer les catégories */
     this._categoriesService.categories$.subscribe(
       (categories : Category[])=>{
         this.categories = categories
-        // console.log(categories)
 
         /**Récuperer les produits */
-        this._productsService.products$.subscribe(
+        this._productsService.products$.asObservable().subscribe(
           (products : Product[])=>{
             this.products = products?.filter((product)=>!product.isHidden && product.isVisible && product.inTrend)?.map(
-              (product : Product)=> ({...product, categoryName : categories?.find((cat)=>cat._id == product.categoryId)?.name })
+              (product : Product)=> ({...product, categoryName : this.categories?.find((cat)=>cat._id == product.categoryId)?.name })
             ).reverse()
             setTimeout(() => {
               initCarousel();
             }, 0);
           },
+          (error : any)=>{
+
+          },
+          ()=>{
+          }
         )
+      },
+      (error : any)=>{},
+      ()=>{
+
       }
     )
 
   }
+
 
 
 

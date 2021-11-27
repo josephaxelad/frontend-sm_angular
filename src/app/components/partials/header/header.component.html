@@ -20,7 +20,7 @@
                 <a href="javascript:void(0)"><img width="30" height="30" src="assets/images/icones/search.png" alt=""></a>
                 <a href="javascript:void(0)"><img width="30" height="30" src="assets/images/icones/user.png" alt=""></a>
                 <a href="javascript:void(0)" [routerLink]="['/panier']" id="cart" class="position-relative"><img width="30" height="30" src="assets/images/icones/cart.png" alt="">
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill ">+99</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill ">{{cart.qty}}</span>
                 </a>
               </div>
             </div>
@@ -64,7 +64,7 @@
       <!-- <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/search.png" alt=""></a> -->
 
       <a href="javascript:void(0)" [routerLink]="['/panier']" id="cart" class="position-relative"><img class="img" width="30" height="30" src="assets/images/icones/cart.png" alt="">
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill img">+99</span>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill img">{{cart.qty}}</span>
       </a>
     </div>
 

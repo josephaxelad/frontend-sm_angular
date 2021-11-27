@@ -23,14 +23,11 @@ export class PromotionComponent implements OnInit {
   constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService) { }
 
   ngOnInit(): void {
-    this._categoriesService.getCategories();
-    this._productsService.getProducts();
 
     /**Récuperer les catégories */
     this._categoriesService.categories$.subscribe(
       (categories : Category[])=>{
         this.categories = categories
-        // console.log(categories)
 
         /**Récuperer les produits */
         this._productsService.products$.subscribe(
@@ -45,7 +42,6 @@ export class PromotionComponent implements OnInit {
               this.products = this.products_;
               this.isShowMoreProducts = false;
             }
-            // console.log(this.products)
           }
         )
       }

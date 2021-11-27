@@ -1,4 +1,4 @@
-<div  fxLayout="column" class="product-card" >
+<div  fxLayout="column" class="product-card"  >
   <div *ngIf="badgeNew" class="nouveau" fxLayout="row"><span>Nouveau</span></div>
   <div *ngIf="product?.inPromotion" class="promo" fxLayout="row" fxLayoutAlign="center center"><span> - {{product?.promotionRate}} %</span></div>
   <div  fxLayout="row" >
@@ -10,8 +10,10 @@
       <a href="javascript:void(0)" class="categorie">{{product?.categoryName}}</a>
       <a href="javascript:void(0)" class="nameProduct"><b>{{product?.name}}</b></a>
     </div>
-    <div fxLayout="row"><h5 [ngClass]="{'promotion': product.inPromotion}" class="product-price"><b>{{product?.price}} €</b></h5> &nbsp; <h5 *ngIf="product.inPromotion" class="product-price"><b>{{product?.promotionPrice}} €</b></h5></div>
+    <div fxLayout="row"><h5 [ngClass]="{'promotion': product?.inPromotion}" class="product-price"><b>{{product?.price}} €</b></h5> &nbsp; <h5 *ngIf="product.inPromotion" class="product-price"><b>{{product?.promotionPrice}} €</b></h5></div>
   </div>
-  <a *ngIf="btnAcheter" class="btn btn-acheter" href="javascript:void(0)" ><span>ACHETER</span></a>
-  <!--<a class="btn-acheter" href="javascript:void(0)"><span>Acheter</span></a> #}-->
+  <a  *ngIf="btnAcheter"  (click)="addProductToCart(product)" class="btn btn-acheter"  href="javascript:void(0)" ><span>ACHETER</span></a>
 </div>
+
+
+
