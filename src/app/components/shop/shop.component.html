@@ -29,7 +29,7 @@
           <div>
             <h1 *ngIf="!products.length" class="title">AUCUN PRODUIT !</h1>
           </div>
-          <div *ngIf="isShowMoreProducts || !products.length" (click)="showMoreProducts()" fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
+          <div *ngIf="isShowMoreProducts " (click)="showMoreProducts()" fxLayout="row" fxLayoutAlign="center center" [style.margin-top.px]="10">
             <a href="javascript:void(0)" class="voir-tous-les-prod">VOIR PLUS DE PRODUITS</a>
           </div>
         </div>

@@ -57,6 +57,7 @@ export class ShopComponent implements OnInit {
     this.categorySelected = categoryName;
     if (!categoryName) {
       this.products = this.products_?.slice(0,this.numberOfElementToShow)
+      this.isShowMoreProducts = true;
     } else {
       this.products = this.products_.filter((product)=>product.categoryName == categoryName)
       this.isShowMoreProducts = false;

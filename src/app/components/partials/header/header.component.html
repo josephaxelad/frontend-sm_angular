@@ -7,7 +7,7 @@
           <!-- Header Top  -- Début  -->
             <div fxLayout="row" fxFlex="80px" fxLayoutAlign="space-between center" >
 
-              <div fxLayout="row" id="en" >
+              <div fxLayout="row" id="en" (click)="logout()" >
                 <a href="javascript:void(0)">En <img width="16" height="16" src="assets/images/icones/down-arrow.png" alt=""></a>
               </div>
 
@@ -18,7 +18,9 @@
 
               <div fxLayout="row" fxLayoutGap="10px" >
                 <a href="javascript:void(0)"><img width="30" height="30" src="assets/images/icones/search.png" alt=""></a>
-                <a href="javascript:void(0)"><img width="30" height="30" src="assets/images/icones/user.png" alt=""></a>
+                <a href="javascript:void(0)" [title]="currentUser?.firstname" style="position: relative;"><img width="30" height="30" src="assets/images/icones/user.png" alt="">
+                  <i *ngIf="isAuth && currentUser" style="background-color: chartreuse;width: 10px;height: 10px;border-radius: 50%;position: absolute;left: 21px;bottom: -1px;" ></i>
+                </a>
                 <a href="javascript:void(0)" [routerLink]="['/panier']" id="cart" class="position-relative"><img width="30" height="30" src="assets/images/icones/cart.png" alt="">
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill ">{{cart.qty}}</span>
                 </a>
@@ -87,7 +89,7 @@
 
             <div fxLayout="row"  fxLayoutAlign="space-between center" >
 
-              <div fxLayout="row" id="en" >
+              <div fxLayout="row" id="en" (click)="logout()">
                 <a href="javascript:void(0)">En <img width="16" height="16" src="assets/images/icones/down-arrow.png" alt=""></a>
               </div>
               <a href="javascript:void(0)"><img class="img" width="25" height="25" src="assets/images/icones/user.png" alt=""></a>
@@ -97,8 +99,8 @@
               <img class="img" src="assets/images/icones/logo_blanc.png" height="45"  alt="">
             </div>
 
-            <div class="connected-user" fxLayout="row"  fxLayoutAlign="center center">
-              <a href="javascript:void(0)">utilisateur</a>&nbsp;<i style="background-color: chartreuse;width: 10px;height: 10px;border-radius: 50%;" ></i>
+            <div *ngIf="isAuth && currentUser" class="connected-user" fxLayout="row"  fxLayoutAlign="center center">
+              <a href="javascript:void(0)">{{currentUser.firstname}}</a>&nbsp;<i style="background-color: chartreuse;width: 10px;height: 10px;border-radius: 50%;" ></i>
             </div>
 
           </div>

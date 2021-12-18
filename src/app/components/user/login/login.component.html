@@ -10,9 +10,6 @@
         <div  fxLayout="row" fxFlex="120px"  fxLayoutAlign="center center"  >
           <div fxLayout="row" fxFlex fxLayoutAlign="space-around center" class="login">
             <li>
-              <a href="javascript:void(0)" [routerLink]="['/panier']" routerLinkActive="active"  >Panier</a>
-            </li>
-            <li>
               <a href="javascript:void(0)" [routerLink]="['/connexion']" routerLinkActive="active"  >Je m'identifie</a>
             </li>
             <li>
@@ -28,17 +25,41 @@
         <!-- Title -- Je me connecte à mon compte -- Fin -->
 
         <!-- Login -- Login -- Début  -->
-        <div fxLayout="column" fxLayoutGap="35px">
+        <form fxLayout="column" fxLayoutGap="35px" [formGroup]="loginForm" (ngSubmit)="login()">
 
           <div fxLayout="row"  fxLayoutAlign="center center">
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" fxLayoutGap="25px" >
-              <input  placeholder="E-mail*" class="input" type="text">
-              <input  placeholder="Mot de passe*" class="input" type="text">
+              <div fxLayout="column" fxFill>
+                <input formControlName="email"  placeholder="E-mail*" class="input form-control" type="text"
+                [ngClass]="{ 'is-invalid': submitted && loginForm.controls.email.errors }">
+                <div *ngIf="submitted && loginForm.controls.email.errors" class="invalid-feedback">
+                  <div *ngIf="loginForm.controls.email.errors.required">L'adresse email est réquise !</div>
+                  <div *ngIf="loginForm.controls.email.errors.email">L'adresse email est invalide !</div>
+                </div>
+              </div>
+              <div fxLayout="column" fxFill>
+                <input formControlName="password" placeholder="Mot de passe*" class="input form-control" type="password"
+                [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }">
+                <div *ngIf="submitted && loginForm.controls.password.errors" class="invalid-feedback">
+                  <div *ngIf="loginForm.controls.password.errors.required">Le mot de passe est réquis !</div>
+                </div>
+              </div>
+
             </div>
           </div>
 
+          <!-- Message d'erreur -->
+          <div  *ngIf="errorMessage"  fxLayout="row" fxLayoutAlign="center center" >
+            <div fxFlex.xs="100" fxFlex="60" class="alert alert-warning alert-dismissible ">
+              <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+              <!-- <h5><i class="icon fas fa-exclamation-triangle"></i></h5> -->
+              {{errorMessage}}
+            </div>
+          </div>
+          <!-- Fin Message d'erreur -->
+
           <div fxLayout="row"  fxLayoutAlign="center center">
-            <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Se connecter</a>
+            <button type="submit" class="btn btn-connecter" fxLayoutGap="25px"  >Se connecter</button>
           </div>
 
           <div fxLayout="row" fxLayoutAlign="center center"  fxLayoutAlign.xs="center center">
@@ -63,7 +84,7 @@
 
           </div>
 
-        </div>
+        </form>
         <!-- Login -- Login -- Fin  -->
 
 

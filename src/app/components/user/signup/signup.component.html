@@ -10,9 +10,6 @@
         <div  fxLayout="row" fxFlex="120px"  fxLayoutAlign="center center"  >
           <div fxLayout="row" fxFlex fxLayoutAlign="space-around center" class="login">
             <li>
-              <a href="javascript:void(0)" [routerLink]="['/panier']" routerLinkActive="active"  >Panier</a>
-            </li>
-            <li>
               <a href="javascript:void(0)" [routerLink]="['/connexion']" routerLinkActive="active"  >Je m'identifie</a>
             </li>
             <li>
@@ -28,36 +25,105 @@
         <!-- Title -- Je me connecte à mon compte -- Fin -->
 
         <!-- Login -- Login -- Début  -->
-        <div fxLayout="column" fxLayoutGap="35px">
+        <form fxLayout="column" fxLayoutGap="35px"  [formGroup]="signUpForm" (ngSubmit)="signUp()">
 
-          <div fxLayout="row" fxLayoutAlign="space-around center" >
-            <div><input type="checkbox" class="checkbox_sex"><span>Mme</span></div>
-            <div><input type="checkbox" class="checkbox_sex"><span >M</span></div>
-          </div>
-
-          <div fxLayout="row"  fxLayoutAlign="center center">
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" fxLayoutGap="25px" >
-              <div fxFill><input fxFlex placeholder="Nom*" class="input" type="text"></div>
-              <div fxFill><input fxFlex placeholder="E-mail*" class="input" type="text"></div>
-              <div fxFill><input fxFlex placeholder="Confirmer l'adresse e-mail*" class="input" type="text"></div>
-              <div fxFill><input fxFlex placeholder="Mot de passe **" class="input" type="text"></div>
-              <div fxFill><input fxFlex placeholder="Confirmer le mot de passe*" class="input" type="text"></div>
+          <div fxLayout="column" >
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <input id="sex-0" formControlName="sex" name="sex" type="radio" value="0" class="checkbox_sex form-check-input"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.sex.errors }">&nbsp;
+                <span for="sex-0" class="form-check-label">Mme</span>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <input id="sex-1" formControlName="sex" name="sex" type="radio" value="1" class="checkbox_sex form-check-input"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.sex.errors }">&nbsp;
+                <span for="sex-1" class="form-check-label">M</span>
+              </div>
+            </div>
+            <div *ngIf="submitted && signUpForm.controls.sex.errors" class="invalid-feedback">
+              <div *ngIf="signUpForm.controls.sex.errors.requiredTrue">Le genre est réquis !</div>
             </div>
           </div>
 
-          <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="15px">
-            <input type="checkbox" id="inputCheckbox">
-            <label for="politique">Oui, j'ai lu et j'accepte la Politique de Protection des Données</label><br>
+          <div fxLayout="row"  fxLayoutAlign="center center">
+
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" fxLayoutGap="25px" >
+
+              <div fxLayout="column" fxFill >
+                <input formControlName="firstname" fxFlex placeholder="Prénoms*" class="input form-control" type="text"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.firstname.errors }">
+                <div *ngIf="submitted && signUpForm.controls.firstname.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.firstname.errors.required">Le prénom est réquis !</div>
+                </div>
+              </div>
+
+              <div fxLayout="column" fxFill>
+                <input formControlName="lastname" fxFlex placeholder="Nom*" class="input form-control" type="text"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.lastname.errors }">
+                <div *ngIf="submitted && signUpForm.controls.lastname.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.lastname.errors.required">Le nom est réquis !</div>
+                </div>
+              </div>
+
+              <div fxLayout="column" fxFill>
+                <input formControlName="email" fxFlex placeholder="E-mail*" class="input form-control" type="text"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.email.errors }">
+                <div *ngIf="submitted && signUpForm.controls.email.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.email.errors.required">L'adresse email est réquise !</div>
+                  <div *ngIf="signUpForm.controls.email.errors.email">L'adresse email est invalide !</div>
+                </div>
+              </div>
+
+              <div fxLayout="column" fxFill>
+                <input formControlName="reEmail" fxFlex placeholder="Confirmer l'adresse e-mail*" class="input form-control" type="text"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.reEmail.errors }">
+                <div *ngIf="submitted && signUpForm.controls.reEmail.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.reEmail.errors.required">La confirmation de l'adresse email est réquise !</div>
+                  <div *ngIf="signUpForm.controls.reEmail.errors.matching">Les adresses email saisies sont différentes !</div>
+                </div>
+              </div>
+
+              <div fxLayout="column" fxFill>
+                <input formControlName="password" fxFlex placeholder="Mot de passe*" class="input form-control" type="password"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.password.errors }">
+                <div *ngIf="submitted && signUpForm.controls.password.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.password.errors.required">Le mot de passe est réquis !</div>
+                  <div *ngIf="signUpForm.controls.password.errors.minlength">Le mot de passe doit avoir au moins 6 caractères !</div>
+                  <div *ngIf="signUpForm.controls.password.errors.maxlength">Le mot de passe doit avoir au plus 40 caractères !</div>
+                </div>
+              </div>
+
+              <div fxLayout="column" fxFill>
+                <input formControlName="rePassword" fxFlex placeholder="Confirmer le mot de passe*" class="input form-control" type="password"
+                [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.rePassword.errors }">
+                <div *ngIf="submitted && signUpForm.controls.rePassword.errors" class="invalid-feedback">
+                  <div *ngIf="signUpForm.controls.rePassword.errors.required">La confirmation du mot de passe est réquise !</div>
+                  <div *ngIf="signUpForm.controls.rePassword.errors.matching">Les mots de passes saisis sont différents !</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div fxLayout="column"  fxLayoutAlign="center center" fxFlex.xs="100" fxFlex="60" >
+            <div  fxLayout="row" fxLayoutGap="15px">
+              <input formControlName="acceptTerms" type="checkbox" id="inputCheckbox" class="form-check-input"
+              [ngClass]="{ 'is-invalid': submitted && signUpForm.controls.acceptTerms.errors }">
+              <label for="acceptTerms" class="form-check-label">Oui, j'ai lu et j'accepte la Politique de Protection des Données</label>
+            </div>
+            <div *ngIf="submitted && signUpForm.controls.acceptTerms.errors" class="invalid-feedback">
+              <div >Confirmation réquise !</div>
+            </div>
           </div>
 
 
 
           <div fxLayout="row"  fxLayoutAlign="center center">
-            <a class="btn btn-connecter" fxLayoutGap="25px" href="javascript:void(0)" >Valider et créer mon compte</a>
+            <button type="submit" class="btn btn-connecter" fxLayoutGap="25px" >Valider et créer mon compte</button>
           </div>
 
 
-        </div>
+        </form>
         <!-- Login -- Login -- Fin  -->
 
 
