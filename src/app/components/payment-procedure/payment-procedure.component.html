@@ -1,0 +1,35 @@
+<!-- Compte -- Début -->
+<div>
+
+  <!-- Compte Container -- Début -->
+    <div class="container" fxLayout="column" fxLayoutGap="20px" >
+
+      <aw-wizard>
+        <aw-wizard-step stepTitle="Adresse de livraison">
+          <app-all-deliveries></app-all-deliveries>
+          <div class="p-footer" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+          <button type="button" class="pa-wizard-btn" awNextStep>Suivant</button>
+          <!-- <button type="button" [awGoToStep]="{stepIndex: 2}">Go directly to third Step</button> -->
+          </div>
+
+        </aw-wizard-step>
+        <aw-wizard-step stepTitle="Méthode de paiement" >
+          <app-payment-method></app-payment-method>
+          <div class="p-footer" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+          <button type="button" class="pa-wizard-btn" awPreviousStep>Précédent</button>
+          <button type="button" class="pa-wizard-btn" awNextStep>Suivant</button>
+          </div>
+
+        </aw-wizard-step>
+        <aw-wizard-step stepTitle="paiement">
+          <app-payment></app-payment>
+          <!-- <button type="button" awPreviousStep>Previous Step</button>
+          <button type="button" >Finish</button> -->
+        </aw-wizard-step>
+      </aw-wizard>
+
+  </div>
+  <!-- Compte container - Fin -->
+
+</div>
+<!-- Compte -- Fin -->

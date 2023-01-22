@@ -1,0 +1,37 @@
+.title{
+  color: #D89065 ;
+  padding-bottom: 11px;
+  padding-top: 11px;
+  font-family: cocogoose;
+}
+
+.nav-tabs{
+  list-style: none;
+  li{
+    button{
+      text-decoration: none;
+      color: #020004;
+      font-size: 120%;
+    }
+
+    button.active{
+      color: #693D2A;
+      font-weight: bold;
+    }
+
+    button:hover{
+      text-decoration: underline;
+      text-decoration-color: #693D2A;
+    }
+  }
+
+  @media(max-width: 400px){
+    li{
+      a{
+        text-decoration: none;
+        color: #020004;
+        font-size: 80%;
+      }
+      }
+  }
+}

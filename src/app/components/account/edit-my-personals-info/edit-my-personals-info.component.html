@@ -1,0 +1,61 @@
+<div class="pa-container">
+  <div class="a-block-header">
+    <h5 class="a-block-header-title">INFORMATIONS PERSONNELLES</h5>
+  </div>
+  <div class="pa-block-body">
+    <form fxLayout="row wrap" [formGroup]="editCustomerPersonalsInfoPasswordForm">
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Prénoms</label>
+        <input class="pa-input" type="text" id="aa" formControlName="firstname"
+        [ngClass]="{ 'is-invalid': submitted && editCustomerPersonalsInfoPasswordForm.controls.firstname.errors }">
+        <div *ngIf="submitted && editCustomerPersonalsInfoPasswordForm.controls.firstname.errors" class="invalid-feedback">
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.firstname.errors.required">Le prénoms est réquis !</div>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Nom</label>
+        <input class="pa-input" type="text" id="aa" formControlName="lastname"
+        [ngClass]="{ 'is-invalid': submitted && editCustomerPersonalsInfoPasswordForm.controls.lastname.errors }">
+        <div *ngIf="submitted && editCustomerPersonalsInfoPasswordForm.controls.lastname.errors" class="invalid-feedback">
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.lastname.errors.required">Le nom est réquis !</div>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Email</label>
+        <input class="pa-input" type="text" id="aa" formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && editCustomerPersonalsInfoPasswordForm.controls.email.errors }">
+        <div *ngIf="submitted && editCustomerPersonalsInfoPasswordForm.controls.email.errors" class="invalid-feedback">
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.email.errors.required">L'adresse email est réquise !</div>
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.email.errors.email">L'adresse email est mal formulée !</div>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Numéro de téléphone</label>
+        <input class="pa-input" type="text" id="aa" formControlName="phone"
+        [ngClass]="{ 'is-invalid': submitted && editCustomerPersonalsInfoPasswordForm.controls.phone.errors }">
+        <div *ngIf="submitted && editCustomerPersonalsInfoPasswordForm.controls.phone.errors" class="invalid-feedback">
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.phone.errors.required">Le numéro de téléphone est réquis !</div>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Genre</label>
+        <select class="pa-input" name="pets" id="pet-select" formControlName="sex"
+        [ngClass]="{ 'is-invalid': submitted && editCustomerPersonalsInfoPasswordForm.controls.sex.errors }">
+          <option value="1">Homme</option>
+          <option value="0">Femme</option>
+        </select>
+        <div *ngIf="submitted && editCustomerPersonalsInfoPasswordForm.controls.sex.errors" class="invalid-feedback">
+          <div *ngIf="editCustomerPersonalsInfoPasswordForm.controls.sex.errors.required">Le genre est réquis !</div>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Date de naissance (optionnelle)</label>
+        <input class="pa-input" type="date" id="aa" formControlName="birthday">
+      </div>
+
+    </form>
+  </div>
+  <div class="a-block-footer" fxLayout="row" fxLayoutAlign="end center" >
+    <button fxFlex.lt-md="100"  type="button" class="pa-wizard-btn" (click)="modify()" >Mettre à jour</button>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Alert, AlertType } from 'src/app/models/alert';
 import { AlertsService } from 'src/app/services/alerts.service';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-alert',
@@ -11,6 +12,7 @@ import { AlertsService } from 'src/app/services/alerts.service';
 })
 export class AlertComponent implements OnInit, OnDestroy {
 
+  faTimesCircle = faTimesCircle;
   @Input() id = 'default-alert';
   @Input() fade = true;
 
@@ -83,7 +85,7 @@ cssClass(alert: Alert) {
     const alertTypeClass = {
         [AlertType.Success]: 'alert-success',
         [AlertType.Error]: 'alert-danger',
-        [AlertType.Info]: 'alert-info',
+        [AlertType.Info]: 'alert-infoo',
         [AlertType.Warning]: 'alert-warning',
         [AlertType.Default]: ''
     }

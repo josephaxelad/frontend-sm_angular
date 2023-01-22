@@ -23,26 +23,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private _cartService : CartService,private _authService : AuthService,private _router : Router,private _userService : UserService) { }
 
   ngOnInit(): void {
+    this._userService.getCurrentCustomer()
     //Vérifier si un utilisateur est connecté
     this.isAuthSub = this._authService.isAuth$.subscribe(
-      (id) => {
-        if (id) {
-          this._userService.getUser(id)
-          .then((user)=>{
-            this.isAuth = true;
-            this.currentUser=user;
-          })
-          .catch(()=>{
-            this.isAuth = false;
-            this._authService.logout()
-          })
-        } else {
-          if (this.isAuth) {
-            this._authService.logout()
-          }
-        }
-
-
+      (isAuth) => {
+        this.isAuth = isAuth;
       }
     );
 

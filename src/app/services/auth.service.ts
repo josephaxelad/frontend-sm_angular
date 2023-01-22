@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 })
 export class AuthService {
 
-  isAuth$ = new BehaviorSubject<string>('');
+  isAuth$ = new BehaviorSubject<boolean>(false);
   token!: string;
   id!: string;
 
@@ -48,9 +48,8 @@ export class AuthService {
   verifyAuth(){
     if (typeof(localStorage) !== "undefined") {
       const token = JSON.parse(localStorage.getItem('token')!);
-      const id = JSON.parse(localStorage.getItem('id')!);
-      if (token && id) {
-        this.isAuth$.next(id);
+      if (token) {
+        this.isAuth$.next(true);
       }
       else {
         this.logout()
@@ -62,12 +61,10 @@ export class AuthService {
 
   //Logout
   logout(){
-    this.isAuth$.next('');
-    this.id = "";
+    this.isAuth$.next(false);
     this.token = "";
     if (typeof(localStorage) !== "undefined") {
       localStorage.removeItem('token');
-      localStorage.removeItem('id');
     }
 
   }

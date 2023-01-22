@@ -8,11 +8,12 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private _authService : AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = JSON.parse(localStorage.getItem('token')!);
@@ -22,10 +23,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(newRequest).pipe(
       catchError((response: any) => {
         if (response.status === 401) {
-          // Do something here
-          if (response.code == 0) {
-            console.log("code 0")
-          }
+          this._authService.logout()
         }
         return throwError(response);
       })

@@ -1,0 +1,80 @@
+<!-- Compte -- Début -->
+<div>
+
+  <!-- Compte Container -- Début -->
+    <div class="container" fxLayout="column" fxLayoutGap="20px" >
+
+      <div fxLayout="row" >
+        <h1 class="title">Mon compte</h1>
+      </div>
+
+      <!-- Client non connecté -- Début -->
+      <div *ngIf="!isAuth"  fxLayout="column" fxLayoutGap="20px">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Je m'identifie</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Je créé mon Compte</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <app-login></app-login>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <app-signup></app-signup>
+          </div>
+        </div>
+
+      </div>
+      <!-- Client non connecté -- Fin -->
+
+      <!-- Client connecté -- Début -->
+      <div *ngIf="isAuth" fxLayout="column" fxLayoutGap="20px" >
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="my-orders-tab" data-bs-toggle="tab" data-bs-target="#my-orders" type="button" role="tab" aria-controls="home" aria-selected="true">Mes commandes</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="my-address-tab" data-bs-toggle="tab" data-bs-target="#my-address" type="button" role="tab" aria-controls="profile" aria-selected="false">Mes adresses de livraison</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="contact" aria-selected="false">Mes informations personnelles</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" type="button" role="tab" aria-controls="contact" aria-selected="false">Mot de passe</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="logout-tab" data-bs-toggle="tab" data-bs-target="#logout" type="button" role="tab" aria-controls="contact" aria-selected="false">Déconnexion</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="my-orders" role="tabpanel" aria-labelledby="home-tab">
+            <app-my-orders></app-my-orders>
+          </div>
+          <div class="tab-pane fade" id="my-address" role="tabpanel" aria-labelledby="profile-tab">
+            <app-my-deliveries-address></app-my-deliveries-address>
+          </div>
+          <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="contact-tab">
+            <app-edit-my-personals-info></app-edit-my-personals-info>
+          </div>
+          <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="profile-tab">
+            <app-edit-my-password></app-edit-my-password>
+          </div>
+          <div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="contact-tab">
+            <app-logout></app-logout>
+          </div>
+        </div>
+      </div>
+      <!-- Client connecté -- Fin -->
+
+
+    </div>
+  <!-- Compte container - Fin -->
+
+</div>
+<!-- Compte -- Fin -->
+
+
+

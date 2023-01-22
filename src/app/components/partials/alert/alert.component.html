@@ -1,4 +1,10 @@
-<div *ngFor="let alert of alerts" class="alert_" class="{{cssClass(alert)}}">
-  <!-- <a class="close" (click)="removeAlert(alert)">&times;</a> -->
+<div *ngFor="let alert of alerts" class="alert_" class="{{cssClass(alert)}}" fxLayout="row" fxLayoutAlign="space-between center">
   <span [innerHTML]="alert.message"></span>
+  <a href="javascrit:void(0)" (click)="removeAlert(alert)">
+    <fa-icon [icon]="faTimesCircle" [styles]="{'stroke': 'red', 'color': 'white'}"></fa-icon>
+  </a>
+  <!-- <a class="close" (click)="removeAlert(alert)">&times;</a> -->
 </div>
+<!-- <div class="alert alert-warning" role="alert">
+  This is a warning alert—check it out!
+</div> -->

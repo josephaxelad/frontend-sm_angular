@@ -69,3 +69,138 @@
 }
 
 /* Fonts */
+
+
+// paiement account
+.pa-container{
+  border: 1px solid #693D2A;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.pa-block-body{
+  padding: 10px;
+}
+.pa-button-circle{
+  border-radius: 50%;
+  background-color: #693D2A;
+  height: 32px;
+  width: 32px;
+}
+.pa-input-control{
+  padding-left: 5px;
+  padding-right: 5px;
+  .pa-input{
+    border: none;
+    border-bottom: 1px solid black;
+    color: #693D2A;
+    font-weight: bold;
+  }
+  .pa-input:focus-visible{
+    outline: none;
+  }
+  label{
+    color: #757575;
+  }
+}
+.pa-delivery-address{
+  color: black;
+  font-weight: bold;
+}
+
+//
+
+//paiment
+.p-container{
+  border: 1px solid #693D2A;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 10px;
+  border-bottom: none;
+}
+.p-block-header{
+  padding: 10px;
+  border-bottom: 1px solid #693D2A;
+}
+.p-radio{
+  margin: 0 5px;
+  height: 20px;
+  width: 20px;
+  accent-color: #693D2A;
+}
+  //wizard
+  .p-footer{
+    border: 1px solid #693D2A;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    // border-top: none;
+  }
+  .pa-wizard-btn{
+    border: 0;
+    background-color: #693D2A;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 2px;
+    // font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0px 2px 2px #693D2A,2px 0px 2px #693D2A,0px -2px 2px #693D2A,-2px 0px 2px #693D2A;
+  }
+.img-paiment-in-line{
+  height: 50px;
+}
+// .p-radio:checked{
+//   accent-color: #693D2A;
+// }
+//
+
+//account
+.a-block-header{
+  padding: 10px;
+  // border-bottom: 1px solid #693D2A;
+}
+.a-block-header-title{
+  color: #693D2A;
+}
+.a-block-footer{
+  padding: 10px 20px;
+}
+/**/
+.btn-app:hover{
+  border: 1px solid #ddd;
+}
+.btn-app{
+  border-radius: 3px;
+  // background-color: #f8f9fa;
+  // border: 1px solid #ddd;
+  color: #6c757d;
+  font-size: 12px;
+  height: 60px;
+  margin: 0 0 10px 10px;
+  min-width: 80px;
+  // padding: 15px 5px;
+  padding: 0 5px;
+  position: relative;
+  text-align: center;
+}
+.btn-app.active{
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  color: #6c757d;
+  font-size: 12px;
+  height: 60px;
+  margin: 0 0 10px 10px;
+  min-width: 80px;
+  // padding: 15px 5px;
+  padding: 0 5px;
+  position: relative;
+  text-align: center;
+}
+/**/
+
+//input phone
+
+.ipunt-phone-placeholder{
+  color: #693D2A;
+}
+
+//
+

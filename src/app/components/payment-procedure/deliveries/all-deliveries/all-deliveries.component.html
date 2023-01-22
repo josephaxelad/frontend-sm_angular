@@ -1,0 +1,99 @@
+<div class="p-container">
+  <div class="p-block-header" fxLayout="row" fxLayoutAlign="space-between center">
+    <h5>Choisissez une adresse de livraison</h5>
+    <button class="pa-button-circle" (click)="isAuth = !isAuth"></button>
+  </div>
+
+  <div *ngIf="!isAuth" class="pa-block-body">
+    <!-- Se connecter - début -->
+    <div class="pd-se-connecter" fxLayout="column" fxLayoutAlign="center center">
+      <a href="javascrript:void(0)" ><h6 style="margin-bottom: 0 !important;">Connectez-vous à votre compte</h6></a>
+      <span style="color: #757575;font-style: italic;">(pour choisir une adresse parmi vos adresses de livraison)</span>
+    </div>
+    <!-- Se connecter - fin -->
+    <div class="pd-ou" fxLayout="column" fxLayoutAlign="center center">
+        <h6 >- OU -</h6>
+    </div>
+    <form fxLayout="row wrap">
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Addresse Email</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Confirmez Addresse Email</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Addresse</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Pays</label>
+        <select class="pa-input" name="pets" id="pet-select" >
+          <option value=""></option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Ville</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Code Postal</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+      <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+        <label for="aa">Numéro de téléphone</label>
+        <input class="pa-input" type="text" id="aa" >
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="isAuth" class="pa-block-body">
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" style="margin: 10px;">
+        <input class="p-radio" name="radio-delivery-address" id="radio-delivery-address-0" value="0" type="radio" for="ab" (change)="changeDeliveryAddress($event)">
+        <label for="radio-delivery-address-0" class="pa-delivery-address" style="font-style: italic;color: #757575;"><span>Ajouter une autre adresse</span>
+        </label>
+      </div>
+      <form *ngIf="isShowNewDeliveryAddress" fxLayout="row wrap">
+        <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+          <label for="aa">Addresse</label>
+          <input class="pa-input" type="text" id="aa" >
+        </div>
+        <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+          <label for="aa">Pays</label>
+          <select class="pa-input" name="pets" id="pet-select" >
+            <option value=""></option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
+        <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+          <label for="aa">Ville</label>
+          <input class="pa-input" type="text" id="aa" >
+        </div>
+        <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+          <label for="aa">Code Postal</label>
+          <input class="pa-input" type="text" id="aa" >
+        </div>
+        <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+          <label for="aa">Numéro de téléphone</label>
+          <input class="pa-input" type="text" id="aa" >
+        </div>
+      </form>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" style="margin: 10px;">
+      <input class="p-radio" name="radio-delivery-address" value="1" type="radio" for="ab" (change)="changeDeliveryAddress($event)">
+      <div fxLayout="column" class="pa-delivery-address"><span>Abidjan, Cote d'Ivoire</span><span>Cocody, 2 Plateaux</span></div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" style="margin: 10px;">
+      <input class="p-radio" name="radio-delivery-address" value="2" type="radio" for="ab" (change)="changeDeliveryAddress($event)">
+      <div fxLayout="column" class="pa-delivery-address"><span>Abidjan, Cote d'Ivoire</span><span>Cocody, 2 Plateaux</span></div>
+    </div>
+  </div>
+
+</div>

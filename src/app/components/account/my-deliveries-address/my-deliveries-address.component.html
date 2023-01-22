@@ -1,0 +1,13 @@
+<div class="pa-container">
+  <div *ngIf="display == 'all'">
+    <app-all-my-deleveries-address
+    (display)="updateDisplay($event)"
+    (addressToEditId)="updateAddressToEditId($event)"></app-all-my-deleveries-address>
+  </div>
+  <div *ngIf="display == 'add'">
+    <app-add-my-deliveries-address (display)="updateDisplay($event)"></app-add-my-deliveries-address>
+  </div>
+  <div *ngIf="display == 'edit'">
+    <app-edit-my-deliveries-address (display)="updateDisplay($event)"></app-edit-my-deliveries-address>
+  </div>
+</div>

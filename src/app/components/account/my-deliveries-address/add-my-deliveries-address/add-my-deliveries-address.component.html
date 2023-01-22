@@ -1,0 +1,78 @@
+<div class="a-block-header" fxLayout="row" fxLayoutAlign="space-between center">
+  <h5 class="a-block-header-title">AJOUTER UNE ADRESSE DE LIVRAISON</h5>
+  <button class="pa-button-circle" fxLayout="row" fxLayoutAlign="center center" (click)="updateDisplay('all')">
+    <fa-icon [icon]="faArrowLeft" [styles]="{'color': 'white'}" ></fa-icon>
+  </button>
+</div>
+<div class="pa-block-body">
+  <form  fxLayout="row wrap" [formGroup]="addMyDeliveryAddressForm">
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Addresse *</label>
+      <input class="pa-input" type="text" id="aa" formControlName="address1"
+      [ngClass]="{ 'is-invalid': submitted && addMyDeliveryAddressForm.controls.address1.errors }">
+      <div *ngIf="submitted && addMyDeliveryAddressForm.controls.address1.errors" class="invalid-feedback">
+        <div *ngIf="addMyDeliveryAddressForm.controls.address1.errors.required">L'adresse de livraison est réquise !</div>
+      </div>
+    </div>
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Addresse 2</label>
+      <input class="pa-input" type="text" id="aa" formControlName="address2">
+    </div>
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Pays *</label>
+      <select class="pa-input" name="pets" id="pet-select" formControlName="idCountry"
+      [ngClass]="{ 'is-invalid': submitted && addMyDeliveryAddressForm.controls.idCountry.errors }">
+        <option value=""></option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+      </select>
+      <div *ngIf="submitted && addMyDeliveryAddressForm.controls.idCountry.errors" class="invalid-feedback">
+        <div *ngIf="addMyDeliveryAddressForm.controls.idCountry.errors.required">Le pays de livraison est réquis !</div>
+      </div>
+    </div>
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Ville *</label>
+      <input class="pa-input" type="text" id="aa" formControlName="city"
+      [ngClass]="{ 'is-invalid': submitted && addMyDeliveryAddressForm.controls.city.errors }">
+      <div *ngIf="submitted && addMyDeliveryAddressForm.controls.city.errors" class="invalid-feedback">
+        <div *ngIf="addMyDeliveryAddressForm.controls.city.errors.required">La ville de livraison est réquise !</div>
+      </div>
+    </div>
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Code Postal *</label>
+      <input class="pa-input" type="text" id="aa" formControlName="zip"
+      [ngClass]="{ 'is-invalid': submitted && addMyDeliveryAddressForm.controls.zip.errors }">
+      <div *ngIf="submitted && addMyDeliveryAddressForm.controls.zip.errors" class="invalid-feedback">
+        <div *ngIf="addMyDeliveryAddressForm.controls.zip.errors.required">Le code postal est réquis !</div>
+      </div>
+    </div>
+    <div fxFlex.lt-md="100" fxFlex="50" class="pa-input-control" fxLayout="column">
+      <label for="aa">Numéro de téléphone *</label>
+      <!-- <input class="pa-input" type="text" id="aa" [preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"> -->
+        <ngx-intl-tel-input
+        [ngClass]="{ 'is-invalid': submitted && addMyDeliveryAddressForm.controls.phone.errors }"
+        [cssClass]="'pa-input'"
+        [enableAutoCountrySelect]="false"
+        [enablePlaceholder]="true"
+        [searchCountryFlag]="true"
+        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+        [selectFirstCountry]="false"
+        [selectedCountryISO]="CountryISO.France"
+        [maxLength]="'15'"
+        [phoneValidation]="true"
+        name="phone"
+        formControlName="phone"
+        [separateDialCode]="true"
+        [searchCountryPlaceholder]="'Rechercher un pays'"
+      ></ngx-intl-tel-input>
+      <div *ngIf="submitted && addMyDeliveryAddressForm.controls.phone.errors" class="invalid-feedback">
+        <div *ngIf="addMyDeliveryAddressForm.controls.phone.errors.required">Le numéro de téléphone est réquis !</div>
+        <div *ngIf="!addMyDeliveryAddressForm.controls.phone.errors.required && addMyDeliveryAddressForm.controls.phone.errors">Le numéro de téléphone est invalide !</div>
+      </div>
+      <!-- [inputId]="my-input-id" -->
+    </div>
+  </form>
+</div>
+<div class="a-block-footer" fxLayout="row" fxLayoutAlign="end center" >
+  <button fxFlex.lt-md="100"  type="button" class="pa-wizard-btn" (click)="addMyDeliveryAddress()" >Ajouter</button>
+</div>

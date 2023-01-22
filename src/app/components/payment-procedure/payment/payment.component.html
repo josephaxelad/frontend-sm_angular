@@ -1,0 +1,72 @@
+<div >
+  <div    fxLayout="row" fxLayoutAlign="space-between center">
+    <h5>Finalisation de la commande</h5>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px" fxLayoutAlign.gt-sm="space-between none">
+    <div  fxFlex="59" fxFlex.lt-md="100" fxLayout="column" fxLayoutGap="10px">
+
+      <div class="pa-container">
+        <div class="p-block-header" fxLayout="row" fxLayoutAlign="space-between center">
+          <h5>Adresse de livraison</h5>
+          <button class="pa-button-circle" fxLayout="row" fxLayoutAlign="center center">
+            <fa-icon [icon]="faEdit" [styles]="{'stroke': 'red', 'color': 'white'}"></fa-icon>
+          </button>
+        </div>
+        <div  class="pa-block-body">
+          <div class="delivery" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column">
+              <span class="type1">Alexandra commerce</span>
+              <span class="type2">Abidjan, Cote d'Ivoire Mermoz</span>
+              <span class="type3">+225 0101022082899</span>
+            </div>
+            <div fxLayout="column">
+              <span class="type2">Livraison prévue</span>
+              <span class="type2">05/03/2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div style="margin-bottom: 10px;" fxHide.lt-md>
+        <app-payment-method></app-payment-method>
+        <div class="p-footer" style="border-top : none" fxLayout="row" fxLayoutAlign="end center" ></div>
+      </div>
+    </div>
+
+    <div fxFlex="39" fxFlex.lt-md="100" fxLayout="column" fxLayoutAlign.gt-sm="space-between none">
+      <div style="margin-bottom: 10px;">
+        <div class="pa-container" style="padding: 0;">
+          <div class="p-block-header" fxLayout="row" fxLayoutAlign="space-between center">
+            <h5>Votre commande</h5>
+          </div>
+          <div  class="pa-block-body" style="padding: 0;">
+            <div class="cart" *ngIf="cart.cart.length" >
+              <div class="cart-item" fxLayout="row" fxLayoutGap="10px" *ngFor="let cartLine of cart.cart, let i = index">
+                <img [src]="prefUrlProductsImage+cartLine.product?.picture!" alt="">
+                <div fxLayout="column" fxLayoutAlign="space-between none">
+                  <div fxLayout="column">
+                    <span class="name">{{cartLine.product?.name}}</span>
+                    <span class="category">{{cartLine.product?.categoryName}}</span>
+                    <span class="price">{{cartLine.product?.inPromotion ?
+                      (cartLine.product?.promotionPrice!*cartLine.qty).toFixed(2) :
+                       (cartLine.product?.price!*cartLine.qty).toFixed(2)}} €</span>
+                  </div>
+                  <div class="qty"><span class="title">Qte :</span><span class="number">{{cartLine.qty}}</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="data-order">
+              <div class="data-order-item" fxLayout="row" fxLayoutAlign="space-between center"><span class="title">Sous-total</span><span class="price">{{(cart.price).toFixed(2)}} €</span></div>
+              <div class="data-order-item" fxLayout="row" fxLayoutAlign="space-between center"><span class="title"> Frais de livraison</span><span class="price"> €</span></div>
+            </div>
+            <div class="order-footer" fxLayoutAlign="center center">
+              <a href="javascript:void(0)">RETOUR AU PANIER</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxFlex="100px"  fxLayout="row"><button fxFlex="100" type="button" class="pa-wizard-btn" >Valider la commande</button></div>
+    </div>
+  </div>
+</div>

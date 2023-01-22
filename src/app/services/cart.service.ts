@@ -4,6 +4,7 @@ import { Cart } from '../models/cart';
 import { CartLine } from '../models/cart-line';
 import { Category } from '../models/category';
 import { Product } from '../models/product';
+import { AlertsService } from './alerts.service';
 import { CategoriesService } from './categories.service';
 import { ProductsService } from './products.service';
 
@@ -17,7 +18,7 @@ export class CartService {
   products : Product[] = [];
   categories: Category[] = [];
 
-  constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService) {
+  constructor(private _productsService : ProductsService,private _categoriesService : CategoriesService,private alertsService : AlertsService) {
     this._categoriesService.categories$.subscribe(
       (categories : Category[])=>{
         this._productsService.products$.subscribe(
@@ -101,7 +102,9 @@ export class CartService {
       cartLine.qty++;
     } else {
       this.cart.cart.push({qty : 1,id : product._id!,product : product});
+
     }
+    this.alertsService.info('Produit ajouté au panier',{autoClose : true,keepAfterRouteChange : true})
 
     this.updateCart();
     this.emitCart();

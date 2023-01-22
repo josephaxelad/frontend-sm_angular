@@ -26,6 +26,7 @@ export class ProductCardComponent implements OnInit {
    */
    addProductToCart(product : Product): void{
     this._cartService.addProductToCart(product);
+
   }
 
 }

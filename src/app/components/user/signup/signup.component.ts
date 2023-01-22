@@ -100,9 +100,9 @@ export class SignupComponent implements OnInit {
           this._router.navigate(["/"])
         })
         .catch((error)=>{
-          console.log(error)
+          console.log(error.message)
           this.submitted = false;
-          this._alertsService.error("Une erreur est survenue lors de l'inscription, verifiez si l'adresse email "+customer.user.email+" n'existe pas déjà! ",
+          this._alertsService.error(error.message,
           {
             autoClose: true,
             keepAfterRouteChange: false,
